@@ -1,0 +1,84 @@
+/**
+ * 網格系統, 目前主流為切24格
+ *
+ * 使用範例
+ * <div class="grid-row">
+ *   <div class="grid-col-xs-24 grid-col-md-8"></div>
+ *   <div class="grid-col-xs-24 grid-col-md-8"></div>
+ *   <div class="grid-col-xs-24 grid-col-md-8"></div>
+ *   <div class="grid-col-xs-24 grid-col-md-12"></div>
+ *   <div class="grid-col-xs-24 grid-col-md-12"></div>
+ * </div>
+ */
+
+$grid-system-map: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+.grid-row {
+  display: grid;
+  grid-template-columns: repeat(24, minmax(0, 1fr));
+  grid-gap: 8px;
+
+  @media (min-width: 992px) {
+    grid-gap: 12px;
+  }
+
+  & > * {
+    min-width: 0;
+    grid-column-start: span 24;
+  }
+}
+
+@each $size, $value in $grid-system-map {
+  @media (min-width: $value) {
+    @for $i from 1 through 24 {
+      .grid-row > .grid-col-#{$size}-#{$i},
+      .grid-col-#{$size}-#{$i} {
+        grid-column-start: span $i;
+      }
+    }
+  }
+}
+
+/**
+ * 網格系統, 目前主流為切24格 (flex版)
+ * flex版 不會溢出
+ * grid版 因為有固定大小 寬度太小會溢出
+ *
+ * 使用範例
+ * <div class="flex-grid-row">
+ *   <div class="flex-col-xs-24 flex-col-md-8"></div>
+ *   <div class="flex-col-xs-24 flex-col-md-8"></div>
+ *   <div class="flex-col-xs-24 flex-col-md-8"></div>
+ *   <div class="flex-col-xs-24 flex-col-md-12"></div>
+ *   <div class="flex-col-xs-24 flex-col-md-12"></div>
+ * </div>
+ */
+
+.flex-grid-row {
+  display: flex;
+  flex-wrap: wrap; // 允許換行
+  gap: 8px; // 間距
+
+  @media (min-width: 992px) {
+    gap: 12px;
+  }
+}
+
+@each $size, $value in $grid-system-map {
+  @media (min-width: $value) {
+    @for $i from 1 through 24 {
+      .flex-grid-row > .flex-col-#{$size}-#{$i},
+      .flex-col-#{$size}-#{$i} {
+        flex: 0 0 calc(percentage($i / 24) - 16px); // 計算百分比寬度
+        max-width: calc(percentage($i / 24) - 16px);
+      }
+    }
+  }
+}
