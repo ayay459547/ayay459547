@@ -3,5 +3,3 @@
 
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ayay459547&layout=donut" alt="Top languages" />
 </div>
-
-About Me : https://ayay459547.github.io/ayay459547/

@@ -1,0 +1,17 @@
+/* ScorllBar */
+
+::-webkit-scrollbar {
+  width: 8px; /* 直向滾動 */
+  height: 8px; /* 橫向滾動 */
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #dedede;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dadada80;
+  transition-duration: 0.3s;
+  border-radius: 10px;
+}

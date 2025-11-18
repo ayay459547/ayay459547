@@ -11,5 +11,12 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxt/test-utils',
     '@nuxt/ui'
+  ],
+
+  // 引入全域 CSS/樣式檔案
+  css: [
+    '~/assets/css/normalize.css',
+    '~/assets/css/scrollbar.css',
+    '~/assets/scss/main.scss',
   ]
 })
