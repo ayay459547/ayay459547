@@ -74,7 +74,7 @@ export default defineNuxtConfig({
       terserOptions: {
         compress: {
           drop_console: false, // 保留 console.log
-          drop_debugger: true, // 可保留或刪除 debugger
+          drop_debugger: true  // 可保留或刪除 debugger
         }
       }
     }
