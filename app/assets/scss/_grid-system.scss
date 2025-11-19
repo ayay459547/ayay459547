@@ -69,8 +69,8 @@ $grid-system-map: (
       .flex-grid-row > .flex-col-#{$size}-#{$i},
       .flex-col-#{$size}-#{$i} {
         // 注意：減掉 gap * 2 = 16px
-        flex: 0 0 calc(#{percentage(math.div($i, 24))} - 16px);
-        max-width: calc(#{percentage(math.div($i, 24))} - 16px);
+        flex: 0 0 calc(#{math.percentage(math.div($i, 24))} - 16px);
+        max-width: calc(#{math.percentage(math.div($i, 24))} - 16px);
       }
     }
   }
