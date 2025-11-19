@@ -9,8 +9,8 @@
       src="/images/background.png"
       alt="Background"
       class="app-img"
-    />
-    <div class="app-bg"></div>
+    >
+    <div class="app-bg"/>
 
     <div class="app-container">
       <div class="app-content">
