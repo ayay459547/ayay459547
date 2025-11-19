@@ -13,10 +13,18 @@ export default defineNuxtConfig({
     '@nuxt/ui'
   ],
 
-  // 引入全域 CSS/樣式檔案
   css: [
     '~/assets/css/normalize.css',
-    '~/assets/css/scrollbar.css',
-    '~/assets/scss/main.scss',
-  ]
+    '~/assets/css/scrollbar.css'
+  ],
+
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "~/assets/scss/main.scss" as *;',
+        }
+      }
+    }
+  }
 })

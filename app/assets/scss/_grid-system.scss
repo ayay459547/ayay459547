@@ -1,3 +1,5 @@
+@use "sass:math";
+
 /**
  * 網格系統, 目前主流為切24格
  *
@@ -47,24 +49,14 @@ $grid-system-map: (
 }
 
 /**
- * 網格系統, 目前主流為切24格 (flex版)
- * flex版 不會溢出
- * grid版 因為有固定大小 寬度太小會溢出
- *
- * 使用範例
- * <div class="flex-grid-row">
- *   <div class="flex-col-xs-24 flex-col-md-8"></div>
- *   <div class="flex-col-xs-24 flex-col-md-8"></div>
- *   <div class="flex-col-xs-24 flex-col-md-8"></div>
- *   <div class="flex-col-xs-24 flex-col-md-12"></div>
- *   <div class="flex-col-xs-24 flex-col-md-12"></div>
- * </div>
+ * 網格系統 (flex版)
+ * flex版不會溢出
  */
 
 .flex-grid-row {
   display: flex;
-  flex-wrap: wrap; // 允許換行
-  gap: 8px; // 間距
+  flex-wrap: wrap;
+  gap: 8px;
 
   @media (min-width: 992px) {
     gap: 12px;
@@ -76,8 +68,9 @@ $grid-system-map: (
     @for $i from 1 through 24 {
       .flex-grid-row > .flex-col-#{$size}-#{$i},
       .flex-col-#{$size}-#{$i} {
-        flex: 0 0 calc(percentage($i / 24) - 16px); // 計算百分比寬度
-        max-width: calc(percentage($i / 24) - 16px);
+        // 注意：減掉 gap * 2 = 16px
+        flex: 0 0 calc(#{percentage(math.div($i, 24))} - 16px);
+        max-width: calc(#{percentage(math.div($i, 24))} - 16px);
       }
     }
   }
