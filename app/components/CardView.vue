@@ -34,8 +34,9 @@ const bindStyle = computed(() => {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
+  border-radius: 36px;
   font-size: 24px;
   font-weight: bold;
+  overflow: hidden;
 }
 </style>
