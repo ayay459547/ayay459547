@@ -6,10 +6,12 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "generate-production": "nuxi generate --dotenv .env.production",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "predeploy": "yarn generate",
-    "deploy": "gh-pages -d .output/public"
+    "predeploy": "yarn generate-production",
+    "deploy": "gh-pages -d .output/public",
+    "deploy-page": "gh-pages -d .output/public -t"
   },
   "dependencies": {
     "@nuxt/content": "3.8.2",

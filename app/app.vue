@@ -1,12 +1,18 @@
 <script lang="ts" setup>
 // import background from '~/assets/images/background.jpg'
 
+const imgSrc = usePublicUrl('/images/background.png')
+
+const config = useRuntimeConfig()
+const type = config.public.type
+const version = config.public.version
+
 </script>
 
 <template>
   <div class="app-wrapper">
     <img
-      src="/images/background.png"
+      :src="imgSrc"
       alt="Background"
       class="app-img"
     >
@@ -15,13 +21,13 @@
     <div class="app-container">
       <div class="app-content">
         <CardView width="100%">
-          Chen Chan Hsieh
+          Chen Chan Hsieh : {{ version }}
         </CardView>
         <CardView width="100%">
-          Skills
+          Skills : {{ type }}
         </CardView>
         <CardView width="100%">
-          Work Experience
+          Work Experience : {{ imgSrc }}
         </CardView>
       </div>
     </div>
