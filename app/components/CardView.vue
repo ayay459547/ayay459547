@@ -28,15 +28,15 @@ const bindStyle = computed(() => {
   min-width: fit-content;
   min-height: fit-content;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.3);
+  // align-items: center;
+  background: #ffffff4d;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   border-radius: 36px;
-  font-size: 24px;
-  font-weight: bold;
+  border: 1px solid #aeaeae4d;
   overflow: hidden;
+  padding: 2rem;
 }
 </style>

@@ -3,10 +3,9 @@
 
 const imgSrc = usePublicUrl('/images/background.png')
 
-const config = useRuntimeConfig()
-const type = config.public.type
-const version = config.public.version
-
+// const config = useRuntimeConfig()
+// const type = config.public.type
+// const version = config.public.version
 </script>
 
 <template>
@@ -19,16 +18,11 @@ const version = config.public.version
     <div class="app-bg"/>
 
     <div class="app-container">
-      <div class="app-content">
-        <CardView width="100%">
-          Chen Chan Hsieh : {{ version }}
-        </CardView>
-        <CardView width="100%">
-          Skills : {{ type }}
-        </CardView>
-        <CardView width="100%">
-          Work Experience : {{ imgSrc }}
-        </CardView>
+      <div class="app-side-bar">
+        <SideBar />
+      </div>
+      <div class="app-content-view">
+        <ContentView  />
       </div>
     </div>
   </div>
@@ -70,15 +64,21 @@ div image {
 
   &-container {
     z-index: 3;
+    width: 100%;
+    height: 100%;
     overflow: auto;
+
+    display: flex;
+    gap: 4rem;
+    padding: 4rem;
   }
 
-  &-content {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 4rem;
-    padding: 8rem;
+  &-side-bar {
+    width: 320px;
+  }
+
+  &-content-view {
+    flex: 1;
   }
 }
 </style>
