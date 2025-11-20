@@ -1,6 +1,6 @@
 <template>
   <div class="content-view">
-    Content View Component
+    <RouterView />
   </div>
 </template>
 

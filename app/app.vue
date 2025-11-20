@@ -67,6 +67,11 @@ div image {
     display: flex;
     gap: 4rem;
     padding: 4rem;
+
+    @media screen and (max-width: 768px) {
+      gap: 2rem;
+      padding: 2rem;
+    }
   }
 
   &-side-bar {
