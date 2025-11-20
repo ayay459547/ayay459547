@@ -10,19 +10,15 @@ const imgSrc = usePublicUrl('/images/background.png')
 
 <template>
   <div class="app-wrapper">
-    <img
-      :src="imgSrc"
-      alt="Background"
-      class="app-img"
-    >
-    <div class="app-bg"/>
+    <img :src="imgSrc" alt="Background" class="app-img" />
+    <div class="app-bg" />
 
     <div class="app-container">
       <div class="app-side-bar">
         <SideBar />
       </div>
       <div class="app-content-view">
-        <ContentView  />
+        <ContentView />
       </div>
     </div>
   </div>
@@ -75,6 +71,10 @@ div image {
 
   &-side-bar {
     width: 320px;
+
+    @media screen and (max-width: 768px) {
+      width: 240px;
+    }
   }
 
   &-content-view {
