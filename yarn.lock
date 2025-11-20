@@ -367,6 +367,11 @@
   dependencies:
     tslib "^2.4.0"
 
+"@emotion/hash@~0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@emotion/hash/-/hash-0.8.0.tgz#bbbff68978fefdbe68ccb533bc8cbe1d1afb5413"
+  integrity sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow==
+
 "@es-joy/jsdoccomment@~0.76.0":
   version "0.76.0"
   resolved "https://registry.npmjs.org/@es-joy/jsdoccomment/-/jsdoccomment-0.76.0.tgz"
@@ -2504,6 +2509,11 @@
   resolved "https://registry.npmjs.org/@types/ms/-/ms-2.1.0.tgz"
   integrity sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==
 
+"@types/node@~14.14.31":
+  version "14.14.45"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.45.tgz#ec2dfb5566ff814d061aef7e141575aedba245cf"
+  integrity sha512-DssMqTV9UnnoxDWu959sDLZzfvqCF0qDNRjaWeYSui9xkFe61kKo4l1TWNTQONpuXEm+gLMRvdlzvNHBamzmEw==
+
 "@types/parse-path@^7.0.0":
   version "7.1.0"
   resolved "https://registry.npmjs.org/@types/parse-path/-/parse-path-7.1.0.tgz"
@@ -2766,6 +2776,53 @@
   version "3.0.3"
   resolved "https://registry.npmjs.org/@vercel/oidc/-/oidc-3.0.3.tgz"
   integrity sha512-yNEQvPcVrK9sIe637+I0jD6leluPxzwJKx/Haw6F4H77CdDsszUn5V3o96LPziXkSNE2B83+Z3mjqGKBK/R6Gg==
+
+"@vicons/antd@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@vicons/antd/-/antd-0.13.0.tgz#a81d1fb4acb276191d8e13e96817b768d0d2519c"
+  integrity sha512-yrUGoUSz2BbGupk9ghQOahc04n5H3MwUDM9pVPsLh9U1uqB47oRWZvYRiZaT1JKPqgTgSE6BXcVw4i9MOF4M+g==
+
+"@vicons/carbon@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@vicons/carbon/-/carbon-0.13.0.tgz#a8fbbbbd4c3f51c8b0b00b268369ef6be2df9bd8"
+  integrity sha512-Z/jExyyS4gsXJc66oTqV/j98nsaiX2JlQ0IUwu9Ms3rztf8VOHEQRuX8Jey1/zbxJpFY/tU+bWvKPRFYGIvCWQ==
+
+"@vicons/fa@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@vicons/fa/-/fa-0.13.0.tgz#d62096e52ac31bfee3daa3764821f3847261ea29"
+  integrity sha512-BFcDewcT78fSn4Y/fOgqlswbLUEW3+qJK2iJiNtgmkMzadBVpDXhNyVKsYM3V2uKPvDUrZT0JCWDWVRCiBXJZA==
+
+"@vicons/fluent@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@vicons/fluent/-/fluent-0.13.0.tgz#f594d4de73104ff27dccfd61cff7df465eb97621"
+  integrity sha512-bYGZsOE3qzvm3Cm43e7tybgGlr5ZUpYqtRZq0g0Tfupe8jIzLolpvQLNUt1zS8Mgt6goTbUk5YH7Fkv16jkykg==
+
+"@vicons/ionicons4@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@vicons/ionicons4/-/ionicons4-0.13.0.tgz#fc3ce6d951b1c7b96dbe3b842d939562672524a4"
+  integrity sha512-5WHIl/4R5a4i9GONa+hIQWxg/WczrbsCdqxawHZvdd3drsEr+Q3yzlfS+NNRO4WS3uDW2uWLCwoW+yp5TgcKeQ==
+
+"@vicons/ionicons5@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@vicons/ionicons5/-/ionicons5-0.13.0.tgz#86856b21807f9e2340c31e7b596f7f42567a88b1"
+  integrity sha512-zvZKBPjEXKN7AXNo2Na2uy+nvuv6SP4KAMQxpKL2vfHMj0fSvuw7JZcOPCjQC3e7ayssKnaoFVAhbYcW6v41qQ==
+
+"@vicons/material@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@vicons/material/-/material-0.13.0.tgz#43dbde2c0f7b157a2fd22911d7decaa6d560daa8"
+  integrity sha512-lKVxFNprM+CaBkUH3gt6VjIeiMsKQl2zARQMwTCZruQl2vRHzyeZiKeCflWS99CEfv2JzX/6y697smxlzyxcVw==
+
+"@vicons/tabler@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@vicons/tabler/-/tabler-0.13.0.tgz#a387fc257e31362c5eb10d16979df3f28e26c8dd"
+  integrity sha512-AykuhiqjszkIoAL/7knIFm6RDOBS1ZmQdJfQ+RNLEah0fVsxykUFCfMBSNZh8lOzC85EtdD1k5g/sv5GYk0Ohg==
+
+"@vicons/utils@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@vicons/utils/-/utils-0.1.4.tgz#accea9226ff0078ebd80d00dcb63ef5e74b210ff"
+  integrity sha512-OHI19qVNN6i+uPQ+Y3f2s0dUxwsYnOCcKBW7XOU4yXXO1aU3ZoKpblCc3+4N0qmgoJs5rWKRAaMisipqEXJwAg==
+  dependencies:
+    "@xicons/utils" "^0.1.4"
 
 "@vitejs/plugin-vue-jsx@^5.1.1":
   version "5.1.1"
@@ -3053,6 +3110,13 @@
   version "1.1.1"
   resolved "https://registry.npmjs.org/@webcontainer/env/-/env-1.1.1.tgz"
   integrity sha512-6aN99yL695Hi9SuIk1oC88l9o0gmxL1nGWWQ/kNy81HigJ0FoaoTXpytCj6ItzgyCEwA9kF1wixsTuv5cjsgng==
+
+"@xicons/utils@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@xicons/utils/-/utils-0.1.4.tgz#cece50613b34d4b4c71e73bb0be92981067e11e1"
+  integrity sha512-uXxKDLz9abr80yJC05XSTq6wlyFcdW+N/1IYJkeHjzzXVc4VQ0sEYMoMMTjAH7HQBOyOkzOB4pf5NGF72lwa8Q==
+  dependencies:
+    css-render "^0.13.2"
 
 abbrev@^3.0.0:
   version "3.0.1"
@@ -3711,6 +3775,15 @@ css-declaration-sorter@^7.2.0:
   resolved "https://registry.npmjs.org/css-declaration-sorter/-/css-declaration-sorter-7.3.0.tgz"
   integrity sha512-LQF6N/3vkAMYF4xoHLJfG718HRJh34Z8BnNhd6bosOMIVjMlhuZK5++oZa3uYAgrI5+7x2o27gUqTR2U/KjUOQ==
 
+css-render@^0.13.2:
+  version "0.13.9"
+  resolved "https://registry.yarnpkg.com/css-render/-/css-render-0.13.9.tgz#56f28c180a83a10ec610a12a9ad9fec087ac9dc1"
+  integrity sha512-n3C4ZH59rveBrUlAD7n0Ze9/gUMKa4dlH1C9CWKpGcIHR/xRcIVXzBGy1iw8WWq2ySmn2/ZqOpySQNAK5Pb6sw==
+  dependencies:
+    "@emotion/hash" "~0.8.0"
+    "@types/node" "~14.14.31"
+    csstype "~3.0.5"
+
 css-select@^5.1.0:
   version "5.2.2"
   resolved "https://registry.npmjs.org/css-select/-/css-select-5.2.2.tgz"
@@ -3813,6 +3886,11 @@ csstype@^3.1.3:
   version "3.2.3"
   resolved "https://registry.npmjs.org/csstype/-/csstype-3.2.3.tgz"
   integrity sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==
+
+csstype@~3.0.5:
+  version "3.0.11"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.11.tgz#d66700c5eacfac1940deb4e3ee5642792d85cd33"
+  integrity sha512-sa6P2wJ+CAbgyy4KFssIb/JNMLxFvKF1pCYCSXS8ZMuqZnMsrxqI2E5sPyoTpxoPU/gVZMzr2zjOfg8GIZOMsw==
 
 db0@^0.3.4:
   version "0.3.4"
