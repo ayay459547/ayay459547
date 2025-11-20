@@ -1,32 +1,46 @@
 <script setup lang="ts">
 const imgSrc = usePublicUrl('/images/Caleb.jpg')
+
+const router = useRouter()
+
+const toHome = () => {
+  router.push('/')
+}
+
 </script>
 
 <template>
   <CardView width="100%" height="100%">
     <div class="side-bar">
-      <img :src="imgSrc" alt="Caleb" class="side-bar-img" />
+      <img :src="imgSrc" alt="Caleb" class="side-bar-img" @click="toHome" />
       <h1 class="side-bar-title">Chen Chan Hsieh</h1>
 
-      <div class="side-bar-nav">
-        <div>Content</div>
-      </div>
+      <nav class="side-bar-nav">
+        <ul class="side-bar-list">
+          <li class="side-bar-item">
+            <NuxtLink to="/skills">Professional Skills</NuxtLink>
+          </li>
+          <li class="side-bar-item">
+            <NuxtLink to="/work">Work Experience</NuxtLink>
+          </li>
+        </ul>
+      </nav>
 
       <div class="side-bar-link">
         <a href="https://github.com/ayay459547" target="_blank">
-          <XIcon type="fa" name="GithubSquare" size="1.5rem" />
+          <XIcon type="fa" name="GithubSquare" size="1.8rem" />
         </a>
         <a
           href="https://www.linkedin.com/in/chen-chan-hsieh-7a6221392/"
           target="_blank"
         >
-          <XIcon type="fa" name="Linkedin" size="1.5rem" />
+          <XIcon type="fa" name="Linkedin" size="1.8rem" />
         </a>
         <a href="https://medium.com/@ayay459547" target="_blank">
-          <XIcon type="fa" name="Medium" size="1.5rem" />
+          <XIcon type="fa" name="Medium" size="1.8rem" />
         </a>
         <a href="https://ayay459547.blogspot.com/" target="_blank">
-          <XIcon type="fa" name="Blogger" size="1.5rem" />
+          <XIcon type="fa" name="Blogger" size="1.8rem" />
         </a>
       </div>
     </div>
@@ -48,6 +62,13 @@ const imgSrc = usePublicUrl('/images/Caleb.jpg')
     display: block;
     margin: 0 auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+
+    transition: border 0.3s linear;
+    border: 1px solid #ffffff00;
+    &:hover {
+      border: 1px solid #ffffff;
+    }
   }
 
   &-title {
@@ -64,16 +85,48 @@ const imgSrc = usePublicUrl('/images/Caleb.jpg')
 
   &-nav {
     flex: 1;
-    color: #ffffff;
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding-top: 2rem;
+  }
+
+  &-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  &-item {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px #00000080;
+    font-size: 1.8rem;
+
+    @media screen and (max-width: 768px) {
+      font-size: 1.1rem;
+    }
+
+    transition: color 0.3s linear;
+    &:hover {
+      color: #8ecaff;
+    }
   }
 
   &-link {
     display: flex;
     justify-content: space-evenly;
-    color: #ffffff;
+
+    & a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      transition: color 0.3s linear;
+      color: #ffffff;
+      &:hover {
+        color: #8ecaff;
+      }
+    }
   }
 }
 </style>
