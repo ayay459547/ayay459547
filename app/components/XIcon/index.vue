@@ -101,9 +101,11 @@ const getIcon = (): Component => {
 </script>
 
 <template>
-  <Icon :size="props.size" :color="props.color" :tag="props.tag">
-    <component :is="getIcon" />
-  </Icon>
+  <ClientOnly>
+    <Icon :size="props.size" :color="props.color" :tag="props.tag">
+      <component :is="getIcon" />
+    </Icon>
+  </ClientOnly>
 </template>
 
 <style lang="scss" scoped></style>
