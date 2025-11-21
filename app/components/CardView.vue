@@ -4,8 +4,8 @@ import { ref } from 'vue'
 const card = ref<HTMLElement | null>(null)
 
 const props = defineProps<{
-  title?: string,
-  width?: string,
+  title?: string
+  width?: string
   height?: string
 }>()
 
