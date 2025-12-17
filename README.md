@@ -11,4 +11,4 @@
 
 | GitHub Stats | Top Langs |
 | :----------: | :-------: |
-| <img src="https://github-readme-stats.vercel.app/api?username=ayay459547&show_icons=true" alt="GitHub stats" /> | <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ayay459547&layout=donut" alt="Top languages" /> |
+| <img src="https://github-readme-stats.vercel.app/api?username=ayay459547&show_icons=true&hide_border=true" alt="GitHub stats" /> | <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ayay459547&layout=donut&hide_border=true" alt="Top languages" /> |
