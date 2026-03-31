@@ -14,20 +14,20 @@
     "deploy-page": "gh-pages -d .output/public -t"
   },
   "dependencies": {
-    "@nuxt/content": "3.8.2",
-    "@nuxt/eslint": "1.10.0",
-    "@nuxt/hints": "1.0.0-alpha.1",
+    "@nuxt/content": "3.12.0",
+    "@nuxt/eslint": "1.15.2",
+    "@nuxt/hints": "1.0.2",
     "@nuxt/image": "2.0.0",
-    "@nuxt/scripts": "0.13.0",
+    "@nuxt/scripts": "0.13.2",
     "@nuxt/test-utils": "3.20.1",
-    "@nuxt/ui": "4.1.0",
-    "@unhead/vue": "^2.0.3",
-    "better-sqlite3": "^12.4.1",
-    "eslint": "^9.0.0",
-    "nuxt": "^4.2.1",
+    "@nuxt/ui": "4.6.0",
+    "@unhead/vue": "^2.1.12",
+    "better-sqlite3": "^12.8.0",
+    "eslint": "^9.39.4",
+    "nuxt": "^4.4.2",
     "typescript": "^5.6.3",
-    "vue": "^3.5.24",
-    "vue-router": "^4.6.3"
+    "vue": "^3.5.31",
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@vicons/antd": "^0.13.0",
@@ -40,6 +40,6 @@
     "@vicons/tabler": "^0.13.0",
     "@vicons/utils": "^0.1.4",
     "gh-pages": "^6.3.0",
-    "sass": "^1.94.1"
+    "sass": "^1.98.0"
   }
 }

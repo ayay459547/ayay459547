@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import SkillsSvg from '~/assets/svg/Professional-Skills.svg?url'
-
+// import SkillsSvg from '~/assets/svg/Professional-Skills.svg?url'
 </script>
 
 <template>
@@ -14,8 +13,6 @@ import SkillsSvg from '~/assets/svg/Professional-Skills.svg?url'
       <li>HTML</li>
       <li>CSS (SCSS)</li>
     </ul>
-
-    <img :src="SkillsSvg" alt="svg" />
   </div>
 </template>
 
@@ -30,18 +27,6 @@ import SkillsSvg from '~/assets/svg/Professional-Skills.svg?url'
 
   ul {
     font-size: 1.5rem;
-  }
-
-  img {
-    width: 240px;
-    height: auto;
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-
-    @media screen and (max-width: 768px) {
-      width: 160px;
-    }
   }
 }
 </style>

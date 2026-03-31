@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import WorkSvg from '~/assets/svg/Work-Experience.svg?url'
-
+// import WorkSvg from '~/assets/svg/Work-Experience.svg?url'
 </script>
 
 <template>
@@ -65,8 +64,6 @@ import WorkSvg from '~/assets/svg/Work-Experience.svg?url'
     功能修正：
       修正測試人員回報的功能錯誤。
     </pre>
-
-    <img :src="WorkSvg" alt="svg" />
   </div>
 </template>
 
@@ -78,18 +75,5 @@ import WorkSvg from '~/assets/svg/Work-Experience.svg?url'
   position: relative;
   padding: 2rem;
   font-size: 1.3rem;
-
-  img {
-    width: 240px;
-    height: auto;
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-
-    @media screen and (max-width: 768px) {
-      width: 160px;
-    }
-  }
 }
 </style>
-
