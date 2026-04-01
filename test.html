@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>謝禎展 | 前端工程師自我介紹</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+            },
+            bgLight: '#F8FAFC'
+          },
+          boxShadow: {
+            'soft': '0 20px 40px -15px rgba(0,0,0,0.05)',
+            'glow': '0 0 40px -10px rgba(59, 130, 246, 0.5)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Iconify -->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <style>
+    body {
+      background-color: #F8FAFC;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Glassmorphism Utilities */
+    .glass {
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    .glass-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 1);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+    }
+
+    /* Soft Halos & Particles */
+    .halo-1 {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+      top: -100px;
+      left: -100px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .halo-2 {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(147, 197, 253, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+      bottom: 10%;
+      right: -50px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Hero Image Overlay Mask */
+    .hero-bg-mask {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=2070');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.15;
+      mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+      z-index: -2;
+    }
+
+    .hero-gradient-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #F8FAFC 0%, rgba(248, 250, 252, 0.8) 50%, rgba(255, 255, 255, 0.3) 100%);
+      z-index: -1;
+    }
+
+    /* Tilt Animation setup */
+    .tilt-card {
+      transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+      transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    .tilt-content {
+      transform: translateZ(30px);
+      /* 3D effect pop out */
+    }
+
+    /* Custom selection color */
+    ::selection {
+      background-color: #dbeafe;
+      color: #1d4ed8;
+    }
+
+    /* SVG Bottom Wave */
+    .svg-wave {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      transform: rotate(180deg);
+      z-index: 10;
+    }
+
+    .svg-wave svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 100px;
+    }
+
+    .svg-wave .shape-fill {
+      fill: #F8FAFC;
+    }
+
+    #three-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
+</head>
+
+<body class="text-slate-800 antialiased selection:bg-brand-100 selection:text-brand-700">
+
+  <!-- Navbar -->
+  <nav class="fixed w-full z-50 transition-all duration-300 glass" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold tracking-tight text-slate-900 flex items-center gap-2">
+        <div
+          class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-cyan-400 flex items-center justify-center text-white text-sm">
+          <iconify-icon icon="ph:code-bold"></iconify-icon>
+        </div>
+        謝禎展
+      </a>
+      <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+        <a href="#about" class="hover:text-brand-600 transition-colors">關於我</a>
+        <a href="#expertise" class="hover:text-brand-600 transition-colors">領域與價值</a>
+        <a href="#stack" class="hover:text-brand-600 transition-colors">技術棧</a>
+      </div>
+      <a href="#contact"
+        class="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white transition-all bg-slate-900 rounded-full hover:bg-brand-600 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500">
+        聯絡我
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <!-- Background Assets -->
+    <div class="hero-bg-mask"></div>
+    <div class="hero-gradient-overlay"></div>
+    <div class="halo-1"></div>
+    <div class="halo-2"></div>
+    <canvas id="three-canvas"></canvas>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10 w-full grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Hero Text -->
+      <div class="hero-content space-y-8 max-w-2xl">
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-brand-100 bg-white/80 text-brand-700 text-sm font-medium animate-fade-in-up">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+          </span>
+          開放新工作機會 | 尋找前端職位
+        </div>
+
+        <h1 class="text-5xl lg:text-7xl font-bold leading-tight tracking-tight text-slate-900">
+          建構具備商業價值的<br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-cyan-500">現代化前端應用</span>
+        </h1>
+
+        <p class="text-lg text-slate-600 leading-relaxed font-light">
+          我是謝禎展，專注於前端開發工程。擁有 <strong class="font-medium text-slate-900">物流業、製造業與金融保險業</strong> 的深厚實戰經驗，擅長運用
+          Vue, React 等現代化技術棧，為複雜業務邏輯打造極致流暢的使用者體驗。
+        </p>
+
+        <div class="flex flex-wrap gap-4 pt-4">
+          <a href="#projects"
+            class="inline-flex items-center justify-center px-8 py-3.5 text-base font-medium text-white transition-all bg-brand-600 rounded-full hover:bg-brand-700 hover:shadow-glow hover:-translate-y-1">
+            查看過往專案
+            <iconify-icon icon="ph:arrow-right-bold" class="ml-2"></iconify-icon>
+          </a>
+          <a href="#contact"
+            class="inline-flex items-center justify-center px-8 py-3.5 text-base font-medium text-slate-700 transition-all bg-white border border-slate-200 rounded-full hover:bg-slate-50 hover:text-brand-600 hover:-translate-y-1 shadow-sm">
+            下載完整履歷
+            <iconify-icon icon="ph:download-simple-bold" class="ml-2"></iconify-icon>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Visual / Floating Card -->
+      <div class="hidden lg:block relative hero-visual perspective-1000">
+        <div
+          class="glass-card rounded-2xl p-6 transform rotate-y-[-10deg] rotate-x-[5deg] shadow-soft relative overflow-hidden group">
+          <div
+            class="absolute inset-0 bg-gradient-to-tr from-brand-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          </div>
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex space-x-2">
+              <div class="w-3 h-3 rounded-full bg-red-400"></div>
+              <div class="w-3 h-3 rounded-full bg-amber-400"></div>
+              <div class="w-3 h-3 rounded-full bg-green-400"></div>
+            </div>
+            <div class="text-xs text-slate-400 font-mono">portfolio.ts</div>
+          </div>
+          <div class="space-y-4 font-mono text-sm text-slate-600">
+            <p><span class="text-pink-500">const</span> <span class="text-blue-500">engineer</span> = {</p>
+            <p class="pl-4">name: <span class="text-green-600">'謝禎展'</span>,</p>
+            <p class="pl-4">role: <span class="text-green-600">'Frontend Developer'</span>,</p>
+            <p class="pl-4">domains: [<span class="text-green-600">'Logistics'</span>, <span
+                class="text-green-600">'Manufacturing'</span>, <span class="text-green-600">'Finance'</span>],</p>
+            <p class="pl-4">stack: [<span class="text-green-600">'Vue'</span>, <span
+                class="text-green-600">'React'</span>, <span class="text-green-600">'Vite'</span>, <span
+                class="text-green-600">'TS'</span>],</p>
+            <p class="pl-4">deliverValue: <span class="text-blue-500">function</span>() {</p>
+            <p class="pl-8 text-slate-400">// Transforming complex logic into</p>
+            <p class="pl-8 text-slate-400">// clean, scalable, and intuitive UI</p>
+            <p class="pl-8"><span class="text-pink-500">return</span> <span class="text-purple-500">Success</span>;</p>
+            <p class="pl-4">}</p>
+            <p>}</p>
+          </div>
+        </div>
+
+        <!-- Floating badges -->
+        <div
+          class="absolute -right-6 top-1/4 glass px-4 py-2 rounded-xl text-sm font-medium text-slate-700 shadow-soft flex items-center gap-2 animate-[bounce_4s_infinite]">
+          <iconify-icon icon="logos:vue" class="text-lg"></iconify-icon> Vue Expert
+        </div>
+        <div
+          class="absolute -left-8 bottom-1/4 glass px-4 py-2 rounded-xl text-sm font-medium text-slate-700 shadow-soft flex items-center gap-2 animate-[bounce_5s_infinite_0.5s]">
+          <iconify-icon icon="logos:react" class="text-lg"></iconify-icon> React Ready
+        </div>
+      </div>
+    </div>
+
+    <!-- SVG Wave Divider -->
+    <div class="svg-wave">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path
+          d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+          class="shape-fill"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Value Proposition Section -->
+  <section id="expertise" class="py-24 relative bg-white">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="text-center max-w-2xl mx-auto mb-16 js-fade-up">
+        <h2 class="text-brand-600 font-semibold tracking-wide uppercase text-sm mb-3">領域專長與價值</h2>
+        <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">不只是寫程式，更專注於解決商業痛點</h3>
+        <p class="text-slate-600">透過前端技術整合複雜的後端服務，為不同產業打造直覺且高效的系統介面。</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="tilt-card glass-card rounded-2xl p-1 overflow-hidden group js-fade-up">
+          <div class="bg-white rounded-xl h-full p-6 relative z-10 transition-colors group-hover:bg-slate-50/50">
+            <div class="tilt-content">
+              <div class="h-48 rounded-lg overflow-hidden mb-6 relative">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800"
+                  alt="Logistics and Manufacturing"
+                  class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                <div class="absolute bottom-4 left-4 text-white font-medium flex gap-2">
+                  <span class="bg-brand-500/80 backdrop-blur-sm px-2 py-1 rounded text-xs">物流業</span>
+                  <span class="bg-indigo-500/80 backdrop-blur-sm px-2 py-1 rounded text-xs">製造業</span>
+                </div>
+              </div>
+              <h4 class="text-xl font-bold text-slate-900 mb-2">跨領域業務系統整合</h4>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                深入理解物流追蹤、倉儲管理與製造業 ERP 系統邏輯，將龐雜的數據轉化為使用者友善的操作介面，提升內部作業效率與精準度。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="tilt-card glass-card rounded-2xl p-1 overflow-hidden group js-fade-up delay-100">
+          <div class="bg-white rounded-xl h-full p-6 relative z-10 transition-colors group-hover:bg-slate-50/50">
+            <div class="tilt-content">
+              <div class="h-48 rounded-lg overflow-hidden mb-6 relative">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800"
+                  alt="Finance and Insurance"
+                  class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                <div class="absolute bottom-4 left-4 text-white font-medium flex gap-2">
+                  <span class="bg-emerald-500/80 backdrop-blur-sm px-2 py-1 rounded text-xs">金融保險業</span>
+                </div>
+              </div>
+              <h4 class="text-xl font-bold text-slate-900 mb-2">嚴謹的金融保險平台</h4>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                具備處理高敏感數據與複雜表單狀態的經驗，確保金融與保險申報流程的安全、穩定及合規性，打造高信賴感的使用體驗。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="tilt-card glass-card rounded-2xl p-1 overflow-hidden group js-fade-up delay-200">
+          <div class="bg-white rounded-xl h-full p-6 relative z-10 transition-colors group-hover:bg-slate-50/50">
+            <div class="tilt-content">
+              <div class="h-48 rounded-lg overflow-hidden mb-6 relative">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+                  alt="Modern Tech Stack"
+                  class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                <div class="absolute bottom-4 left-4 text-white font-medium flex gap-2">
+                  <span class="bg-sky-500/80 backdrop-blur-sm px-2 py-1 rounded text-xs">效能優化</span>
+                  <span class="bg-purple-500/80 backdrop-blur-sm px-2 py-1 rounded text-xs">現代化架構</span>
+                </div>
+              </div>
+              <h4 class="text-xl font-bold text-slate-900 mb-2">高效能的前端架構</h4>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                善用 Vite 建置工具、模組化開發與 TypeScript 型別保護，不僅交付高品質產品，更為團隊帶來易於維護與擴展的程式碼基底。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section id="stack" class="py-24 relative bg-slate-50">
+    <!-- Background Halo -->
+    <div class="absolute right-0 top-0 w-96 h-96 bg-brand-100/50 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+      <h3 class="text-3xl font-bold text-slate-900 mb-12 js-fade-up">核心技術堆疊</h3>
+
+      <div class="flex flex-wrap justify-center gap-4 md:gap-6 js-fade-up">
+        <!-- Tech Pills -->
+        <div
+          class="glass-card flex items-center gap-3 px-6 py-4 rounded-2xl hover:-translate-y-1 transition-transform cursor-default">
+          <iconify-icon icon="logos:vue" class="text-3xl"></iconify-icon>
+          <span class="font-semibold text-slate-700">Vue.js</span>
+        </div>
+        <div
+          class="glass-card flex items-center gap-3 px-6 py-4 rounded-2xl hover:-translate-y-1 transition-transform cursor-default">
+          <iconify-icon icon="logos:react" class="text-3xl"></iconify-icon>
+          <span class="font-semibold text-slate-700">React</span>
+        </div>
+        <div
+          class="glass-card flex items-center gap-3 px-6 py-4 rounded-2xl hover:-translate-y-1 transition-transform cursor-default">
+          <iconify-icon icon="logos:vitejs" class="text-3xl"></iconify-icon>
+          <span class="font-semibold text-slate-700">Vite</span>
+        </div>
+        <div
+          class="glass-card flex items-center gap-3 px-6 py-4 rounded-2xl hover:-translate-y-1 transition-transform cursor-default">
+          <iconify-icon icon="logos:typescript-icon" class="text-3xl"></iconify-icon>
+          <span class="font-semibold text-slate-700">TypeScript</span>
+        </div>
+        <div
+          class="glass-card flex items-center gap-3 px-6 py-4 rounded-2xl hover:-translate-y-1 transition-transform cursor-default">
+          <iconify-icon icon="logos:javascript" class="text-3xl"></iconify-icon>
+          <span class="font-semibold text-slate-700">JavaScript</span>
+        </div>
+        <div
+          class="glass-card flex items-center gap-3 px-6 py-4 rounded-2xl hover:-translate-y-1 transition-transform cursor-default">
+          <iconify-icon icon="vscode-icons:file-type-sql" class="text-3xl"></iconify-icon>
+          <span class="font-semibold text-slate-700">SQL</span>
+        </div>
+        <div
+          class="glass-card flex items-center gap-3 px-6 py-4 rounded-2xl hover:-translate-y-1 transition-transform cursor-default">
+          <iconify-icon icon="logos:html-5" class="text-3xl"></iconify-icon>
+          <span class="font-semibold text-slate-700">HTML5</span>
+        </div>
+        <div
+          class="glass-card flex items-center gap-3 px-6 py-4 rounded-2xl hover:-translate-y-1 transition-transform cursor-default">
+          <iconify-icon icon="logos:css-3" class="text-3xl"></iconify-icon>
+          <span class="font-semibold text-slate-700">CSS3</span>
+        </div>
+        <div
+          class="glass-card flex items-center gap-3 px-6 py-4 rounded-2xl hover:-translate-y-1 transition-transform cursor-default">
+          <iconify-icon icon="logos:sass" class="text-3xl"></iconify-icon>
+          <span class="font-semibold text-slate-700">SCSS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section id="contact" class="py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-brand-600"></div>
+    <!-- Decorative abstract shapes -->
+    <div class="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none">
+      <div
+        class="absolute -top-24 -right-24 w-96 h-96 bg-brand-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob">
+      </div>
+      <div
+        class="absolute -bottom-24 -left-24 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000">
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 relative z-10 text-center js-fade-up">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">準備好提升您的數位產品體驗了嗎？</h2>
+      <p class="text-brand-100 text-lg mb-10 max-w-2xl mx-auto font-light">
+        無論是企業內部系統重構、複雜業務邏輯的前端實作，或是全新數位產品的開發，我都能為您提供最專業的技術支援。
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <a href="mailto:hello@example.com"
+          class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-brand-700 bg-white rounded-full font-semibold hover:bg-slate-50 hover:shadow-xl transition-all hover:-translate-y-1">
+          <iconify-icon icon="ph:envelope-simple-bold" class="mr-2 text-xl"></iconify-icon>
+          與我聯繫 (Email)
+        </a>
+        <a href="#"
+          class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-white border border-white/30 rounded-full font-semibold hover:bg-white/10 transition-all hover:-translate-y-1 glass">
+          <iconify-icon icon="mdi:github" class="mr-2 text-xl"></iconify-icon>
+          瀏覽 GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 py-12 border-t border-slate-800 text-center">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center justify-center gap-2 mb-6 text-xl font-bold text-white">
+        <iconify-icon icon="ph:code-bold" class="text-brand-500"></iconify-icon>
+        謝禎展 <span class="text-slate-500 font-light">| 前端工程師</span>
+      </div>
+      <p class="text-slate-500 text-sm">
+        &copy;
+        <script>document.write(new Date().getFullYear())</script> Zhen-Zhan Xie. All rights reserved. <br
+          class="md:hidden">Crafted with React, Vue & Tailwind.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // --- 1. Three.js Background Animation (Soft Floating Geometry) ---
+    function initThreeJS() {
+      const canvas = document.getElementById('three-canvas');
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(window.devicePixelRatio);
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.z = 15;
+
+      // Lights
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+      scene.add(ambientLight);
+
+      const pointLight = new THREE.PointLight(0x3b82f6, 1);
+      pointLight.position.set(5, 5, 5);
+      scene.add(pointLight);
+
+      // Objects (Icosahedron to look abstract/techy)
+      const objects = [];
+      const material = new THREE.MeshPhysicalMaterial({
+        color: 0xffffff,
+        metalness: 0.1,
+        roughness: 0.1,
+        transparent: true,
+        opacity: 0.4,
+        clearcoat: 1.0,
+        clearcoatRoughness: 0.1
+      });
+
+      for (let i = 0; i < 6; i++) {
+        const geometry = new THREE.IcosahedronGeometry(Math.random() * 1.5 + 0.5, 0);
+        const mesh = new THREE.Mesh(geometry, material);
+
+        mesh.position.x = (Math.random() - 0.5) * 20;
+        mesh.position.y = (Math.random() - 0.5) * 15;
+        mesh.position.z = (Math.random() - 0.5) * 10 - 5;
+
+        mesh.rotation.x = Math.random() * Math.PI;
+        mesh.rotation.y = Math.random() * Math.PI;
+
+        mesh.userData = {
+          speedX: (Math.random() - 0.5) * 0.01,
+          speedY: (Math.random() - 0.5) * 0.01,
+          floatSpeed: Math.random() * 0.02 + 0.01,
+          startY: mesh.position.y,
+          offset: Math.random() * Math.PI * 2
+        };
+
+        scene.add(mesh);
+        objects.push(mesh);
+      }
+
+      // Animation Loop
+      function animate() {
+        requestAnimationFrame(animate);
+        const time = Date.now() * 0.001;
+
+        objects.forEach(obj => {
+          obj.rotation.x += obj.userData.speedX;
+          obj.rotation.y += obj.userData.speedY;
+          // Float up and down
+          obj.position.y = obj.userData.startY + Math.sin(time * obj.userData.floatSpeed + obj.userData.offset) * 1.5;
+        });
+
+        renderer.render(scene, camera);
+      }
+
+      animate();
+
+      // Resize handler
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+    }
+
+    // --- 2. GSAP Animations ---
+    function initGSAP() {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Hero Text Animation
+      gsap.fromTo(".hero-content > *",
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, stagger: 0.15, ease: "power3.out", delay: 0.2 }
+      );
+
+      gsap.fromTo(".hero-visual",
+        { x: 50, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1.2, ease: "power3.out", delay: 0.6 }
+      );
+
+      // Scroll up animations for sections
+      const fadeUpElements = document.querySelectorAll('.js-fade-up');
+      fadeUpElements.forEach((el, index) => {
+        gsap.fromTo(el,
+          { y: 40, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      });
+    }
+
+    // --- 3. Card Hover Tilt Effect ---
+    function initTiltCards() {
+      const cards = document.querySelectorAll('.tilt-card');
+
+      cards.forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          // Calculate rotation (max 10 degrees)
+          const rotateX = ((y - centerY) / centerY) * -10;
+          const rotateY = ((x - centerX) / centerX) * 10;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        });
+      });
+    }
+
+    // --- 4. Navbar Scroll Effect ---
+    function initNavbar() {
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('shadow-soft');
+          navbar.classList.replace('py-4', 'py-2');
+        } else {
+          navbar.classList.remove('shadow-soft');
+          navbar.classList.replace('py-2', 'py-4');
+        }
+      });
+    }
+
+    // Initialize all scripts after DOM load
+    window.addEventListener('DOMContentLoaded', () => {
+      initThreeJS();
+      initGSAP();
+      initTiltCards();
+      initNavbar();
+    });
+  </script>
+</body>
+
+</html>
