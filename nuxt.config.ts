@@ -1,7 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-const COMPATIBILITYDATE = '2025-11-19'
-const NUXT_BUILD_VERSION = '2025-11-21.1'
+// export default defineNuxtConfig({
+//   compatibilityDate: '2025-07-15',
+//   devtools: { enabled: true },
+//   modules: ['@nuxtjs/google-fonts', '@nuxtjs/tailwindcss']
+// })
+
+const COMPATIBILITYDATE = '2026-04-02'
+const NUXT_BUILD_VERSION = '2026-04-02.1'
 
 const NUXT_ENV_TYPE = import.meta.env.NUXT_ENV_TYPE || 'DEV'
 const NUXT_SYSTEM_VERSION = import.meta.env.NUXT_SYSTEM_VERSION || '0.0.0'
@@ -44,13 +50,19 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   modules: [
-    '@nuxt/content',
-    '@nuxt/eslint',
-    '@nuxt/hints',
-    '@nuxt/image',
-    '@nuxt/scripts',
-    '@nuxt/test-utils',
-    '@nuxt/ui'
+    [
+      '@nuxtjs/google-fonts',
+      {
+        families: {
+          Inter: [300, 400, 500, 600, 700],
+          'Noto+Sans+TC': [300, 400, 500, 700]
+        },
+        display: 'swap',
+        preconnect: true // 會自動生成 preconnect
+      }
+    ],
+    ,
+    '@nuxtjs/tailwindcss'
   ],
 
   app: {
@@ -65,16 +77,16 @@ export default defineNuxtConfig({
     }
   },
 
-  css: ['~/assets/css/normalize.css', '~/assets/css/scrollbar.css'],
+  css: ['~/assets/reset.css', '~/assets/normalize.css'],
 
   vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: '@use "~/assets/scss/main.scss" as *;'
-        }
-      }
-    },
+    // css: {
+    //   preprocessorOptions: {
+    //     scss: {
+    //       additionalData: '@use "~/assets/main.scss" as *;'
+    //     }
+    //   }
+    // },
     build: {
       terserOptions: {
         compress: {

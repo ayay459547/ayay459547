@@ -1,55 +1,19 @@
 <script setup lang="ts">
-import HomeSvg from '~/assets/svg/Home.svg?url'
+import HeroSection from '~/components/HeroSection.vue'
+import ValueProposition from '~/components/ValueProposition.vue'
+import TechStack from '~/components/TechStack.vue'
+import FinalCTA from '~/components/FinalCTA.vue'
 </script>
 
 <template>
-  <div class="home-page">
-    <div class="chart">
-      <img
-        src="https://github-readme-stats.vercel.app/api?username=ayay459547&show_icons=true"
-        alt="GitHub stats"
-      />
-
-      <img
-        src="https://github-readme-stats.vercel.app/api/top-langs/?username=ayay459547&layout=donut"
-        alt="Top languages"
-      />
-    </div>
-
-    <img :src="HomeSvg" class="svg" alt="svg" />
-  </div>
+  <!-- Hero Section -->
+  <HeroSection />
+  <!-- Value Proposition Section -->
+  <ValueProposition />
+  <!-- Tech Stack Section -->
+  <TechStack />
+  <!-- Final CTA Section -->
+  <FinalCTA />
 </template>
 
-<style lang="scss" scoped>
-.home-page {
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  position: relative;
-  padding: 2rem;
-
-  .chart {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 1.5rem;
-
-    img {
-      flex: 1;
-    }
-  }
-
-  .svg {
-    width: 240px;
-    height: auto;
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-
-    @media screen and (max-width: 768px) {
-      width: 160px;
-    }
-  }
-}
-</style>
+<style lang="sass" scoped></style>

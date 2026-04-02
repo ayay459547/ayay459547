@@ -1,14 +1,75 @@
-<!-- <div style="display: flex; gap: 16px;">
-  <img src="https://github-readme-stats.vercel.app/api?username=ayay459547&show_icons=true" alt="GitHub stats" />
+# Nuxt Minimal Starter
 
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ayay459547&layout=donut" alt="Top languages" />
-</div> -->
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-| GitHub Stats | Top Langs |
-| :----------: | :-------: |
-| <img align="center" src="https://github-readme-stats-fork-alpha.vercel.app/api?username=ayay459547&hide_title=true&hide_border=true&show_icons=true&include_all_commits=true" alt="Github stats" /> | <img align="center" src="https://github-readme-stats-fork-alpha.vercel.app/api/top-langs/?username=ayay459547&hide_title=true&hide_border=true&layout=compact" alt="Top Langs" /> |
+## Setup
 
+Make sure to install dependencies:
 
-| GitHub Stats | Top Langs |
-| :----------: | :-------: |
-| <img src="https://github-readme-stats.vercel.app/api?username=ayay459547&show_icons=true&hide_border=true" alt="GitHub stats" /> | <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ayay459547&layout=donut&hide_border=true" alt="Top languages" /> |
+```bash
+# npm
+npm install
+
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
+```
+
+## Development Server
+
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
