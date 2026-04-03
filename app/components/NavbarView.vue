@@ -7,7 +7,7 @@ const { navList = [] } = defineProps<{
 </script>
 
 <template>
-  <nav class="fixed w-full z-50 transition-all duration-300 glass" id="navbar">
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 glass">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
       <a
         href="#"
@@ -18,7 +18,7 @@ const { navList = [] } = defineProps<{
         >
           <IconifyIcon icon="ph:code-bold"></IconifyIcon>
         </div>
-        謝禎展
+        Chen Chan Hsieh
       </a>
       <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
         <a
@@ -30,12 +30,6 @@ const { navList = [] } = defineProps<{
           {{ navItem.title }}
         </a>
       </div>
-      <a
-        href="#contact"
-        class="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-white transition-all bg-slate-900 rounded-full hover:bg-brand-600 hover:shadow-glow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500"
-      >
-        聯絡我
-      </a>
     </div>
   </nav>
 </template>

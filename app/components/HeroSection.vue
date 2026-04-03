@@ -42,7 +42,7 @@
         </h1>
 
         <p class="text-lg text-slate-600 leading-relaxed font-light">
-          我是謝禎展，專注於前端開發工程。擁有
+          專注於前端開發工程。擁有
           <strong class="font-medium text-slate-900">
             物流業、製造業與金融保險業
           </strong>
@@ -93,7 +93,7 @@
               <span class="text-blue-500 pl-2">engineer</span> = {
             </p>
             <p class="pl-4">
-              name: <span class="text-green-600">'謝禎展'</span>,
+              name: <span class="text-green-600">'Chen Chan Hsieh'</span>,
             </p>
             <p class="pl-4">
               role: <span class="text-green-600">'Frontend Developer'</span>,
@@ -107,6 +107,7 @@
               stack: [<span class="text-green-600">'Vue'</span>,
               <span class="text-green-600">'React'</span>,
               <span class="text-green-600">'Vite'</span>,
+              <span class="text-green-600">'Scss'</span>,
               <span class="text-green-600">'TS'</span>],
             </p>
             <p class="pl-4">
@@ -119,7 +120,7 @@
               // clean, scalable, and intuitive UI
             </p>
             <p class="pl-8">
-              <span class="text-pink-500">return</span>
+              <span class="text-pink-500">return</span>&nbsp;
               <span class="text-purple-500">Success</span>;
             </p>
             <p class="pl-4">}</p>

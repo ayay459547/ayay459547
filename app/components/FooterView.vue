@@ -9,7 +9,7 @@ const year = new Date().getFullYear()
         class="flex items-center justify-center gap-2 mb-6 text-xl font-bold text-white"
       >
         <IconifyIcon icon="ph:code-bold" class="text-brand-500"></IconifyIcon>
-        謝禎展 <span class="text-slate-500 font-light">| 前端工程師</span>
+        Chen Chan Hsieh <span class="text-slate-500 font-light">| Frontend Engineer</span>
       </div>
       <p class="text-slate-500 text-sm">
         &copy;

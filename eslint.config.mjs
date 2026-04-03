@@ -5,6 +5,10 @@ export default withNuxt({
   files: ['**/*.{ts,tsx,js,jsx,vue}'],
   rules: {
     /**
+     * template 可以有多個 root
+     */
+    'vue/no-multiple-template-root': 'off',
+    /**
      * 不可使用 namespace
      * v: type interface
      * x: namespace
