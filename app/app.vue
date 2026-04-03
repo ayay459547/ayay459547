@@ -15,7 +15,7 @@ const navList: NavList = [
     class="app text-slate-800 antialiased selection:bg-brand-100 selection:text-brand-700"
   >
     <!-- Navbar -->
-    <NavbarView :navList="navList" />
+    <NavbarView :nav-list="navList" />
 
     <RouterView />
     <!-- <NuxtRouteAnnouncer /> -->
