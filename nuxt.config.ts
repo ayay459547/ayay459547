@@ -1,6 +1,6 @@
 // 根據你的需求設定的常數
-const COMPATIBILITY_DATE = '2026-05-15'
-const NUXT_BUILD_VERSION = '2026-05-15.1'
+const COMPATIBILITY_DATE = '2026-05-10'
+const NUXT_BUILD_VERSION = '2026-05-10.1'
 
 // 建議使用 process.env 確保在所有 Nuxt 生命週期都能正確讀取 .env
 const NUXT_APP_TYPE = process.env.NUXT_APP_TYPE || 'DEV'
@@ -63,7 +63,6 @@ export default defineNuxtConfig({
   app: {
     baseURL: NUXT_APP_BASE_URL,
     // buildAssetsDir: '_nuxt',
-    buildAssetsDir: 'assets',
     head: {
       title: 'Chen Chan Hsieh | Personal Portfolio',
       htmlAttrs: {
