@@ -8,7 +8,7 @@ const NUXT_SYSTEM_VERSION = process.env.NUXT_SYSTEM_VERSION || '0.0.0'
 const NUXT_BASE_URL = process.env.NUXT_BASE_URL || '/'
 const NUXT_PUBLIC_URL = process.env.NUXT_PUBLIC_URL || '/'
 
-// 使用 Intl 優化時間格式化 (更精簡)
+// 當前日期時間
 const formattedDate = new Intl.DateTimeFormat('zh-TW', {
   year: 'numeric',
   month: '2-digit',
@@ -41,7 +41,6 @@ console.log(
 )
 
 export default defineNuxtConfig({
-  // 核心設定
   ssr: true,
   compatibilityDate: COMPATIBILITY_DATE as any,
   devtools: { enabled: true },
@@ -49,7 +48,7 @@ export default defineNuxtConfig({
   // 模組設定
   modules: ['@nuxtjs/google-fonts', '@nuxtjs/tailwindcss'],
 
-  // Google Fonts 獨立配置 (建議 download: true 提升效能與隱私)
+  // Google Fonts
   googleFonts: {
     families: {
       Inter: [300, 400, 500, 600, 700],

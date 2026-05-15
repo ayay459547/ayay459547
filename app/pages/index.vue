@@ -6,9 +6,9 @@ defineProps<{
 
 <template>
   <div class="h-full">
-    <ProfileTab v-if="activeTab === 'profile'" />
-    <ExperienceTab v-else-if="activeTab === 'experience'" />
-    <ProjectsTab v-else-if="activeTab === 'projects'" />
-    <SkillsCertsTab v-else-if="activeTab === 'skills-certs'" />
+    <ProfileTab v-show="activeTab === 'profile'" />
+    <ExperienceTab v-show="activeTab === 'experience'" />
+    <ProjectsTab v-show="activeTab === 'projects'" />
+    <SkillsCertsTab v-show="activeTab === 'skills-certs'" />
   </div>
 </template>
