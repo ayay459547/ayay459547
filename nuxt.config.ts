@@ -41,7 +41,7 @@ console.log(
 )
 
 export default defineNuxtConfig({
-  ssr: true,
+  ssr: false,
   future: {
     compatibilityVersion: 4
   },
