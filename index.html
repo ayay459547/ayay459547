@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chen Chan Hsieh | Frontend Developer</title>
+  <title>Chen Chan Hsieh | 謝禎展</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -105,7 +105,6 @@
             </span>
             Chen Chan Hsieh
           </h1>
-          <p class="text-xs text-slate-500 mt-1 font-medium px-1">Frontend Developer</p>
         </div>
 
         <!-- Mobile GitHub Icon -->
@@ -156,13 +155,14 @@
           </div>
         </button>
 
-        <!-- Certifications -->
-        <button data-nav="certifications" onclick="switchTab('certifications')"
+        <!-- Skills & Certifications -->
+        <button data-nav="skills-certs" onclick="switchTab('skills-certs')"
           class="w-full flex flex-row items-center justify-start gap-4 px-5 py-5 rounded-[1.25rem] cursor-pointer transition-all duration-300 text-slate-500 hover:bg-white/60 nav-item">
           <i data-lucide="award" class="w-5 h-5"></i>
           <div class="flex flex-col items-start text-left text-current">
-            <span class="text-[15px] font-bold tracking-wide leading-tight">專業證照</span>
-            <span class="text-[10px] font-medium opacity-80 uppercase tracking-widest leading-tight mt-0.5">Certs</span>
+            <span class="text-[15px] font-bold tracking-wide leading-tight">技能與證照</span>
+            <span class="text-[10px] font-medium opacity-80 uppercase tracking-widest leading-tight mt-0.5">Skills &
+              Certs</span>
           </div>
         </button>
 
@@ -218,13 +218,13 @@
         </div>
       </button>
 
-      <!-- Certifications -->
-      <button data-nav="certifications" onclick="switchTab('certifications')"
+      <!-- Skills & Certifications -->
+      <button data-nav="skills-certs" onclick="switchTab('skills-certs')"
         class="flex-1 flex flex-col items-center justify-center gap-1.5 px-1 py-2.5 rounded-[1.25rem] cursor-pointer transition-all duration-300 text-slate-500 hover:bg-white/60 nav-item">
         <i data-lucide="award" class="w-5 h-5"></i>
         <div class="flex flex-col items-center text-current text-center">
-          <span class="text-[12px] font-bold tracking-wide leading-tight whitespace-nowrap">專業證照</span>
-          <span class="text-[9px] font-medium opacity-80 uppercase tracking-widest leading-tight mt-0.5">Certs</span>
+          <span class="text-[12px] font-bold tracking-wide leading-tight whitespace-nowrap">技能證照</span>
+          <span class="text-[9px] font-medium opacity-80 uppercase tracking-widest leading-tight mt-0.5">Skills</span>
         </div>
       </button>
 
@@ -424,145 +424,159 @@
             </div>
           </div>
 
-          <!-- Certifications Tab Content -->
-          <div id="tab-certifications" class="tab-content hidden animate-fade-in space-y-6 py-2">
-            <h3 class="text-xl font-bold text-slate-800 mb-6">專業證照</h3>
+          <!-- Skills & Certifications Tab Content -->
+          <div id="tab-skills-certs"
+            class="tab-content hidden animate-fade-in space-y-10 py-2 w-full max-w-4xl mx-auto">
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              <!-- Cert 1 -->
-              <div
-                class="bg-white/40 backdrop-blur-md rounded-2xl p-4 border border-white/60 shadow-sm hover:shadow-md transition-all flex items-start gap-4">
+            <!-- Skills Section -->
+            <div>
+              <div class="flex items-center gap-3 mb-6">
                 <div
-                  class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 shadow-inner flex-shrink-0">
-                  <i data-lucide="shield-check" class="w-6 h-6"></i>
+                  class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 shadow-inner flex-shrink-0">
+                  <i data-lucide="sliders-horizontal" class="w-5 h-5"></i>
                 </div>
                 <div>
-                  <h4 class="text-base font-bold text-slate-800 leading-tight mb-1.5">財產保險業務員資格</h4>
-                  <p class="text-xs text-slate-500 font-medium mb-1">財團法人台灣金融研訓院</p>
-                  <p class="text-xs text-slate-400">發照日期 2019年8月 · 永久有效</p>
+                  <h3 class="text-xl font-bold text-slate-800">技能與工具</h3>
+                  <p class="text-xs text-slate-500 font-medium">Skills & Tools</p>
                 </div>
               </div>
 
-              <!-- Cert 2 -->
+              <!-- Tags Container -->
               <div
-                class="bg-white/40 backdrop-blur-md rounded-2xl p-4 border border-white/60 shadow-sm hover:shadow-md transition-all flex items-start gap-4">
-                <div
-                  class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 shadow-inner flex-shrink-0">
-                  <i data-lucide="landmark" class="w-6 h-6"></i>
-                </div>
-                <div>
-                  <h4 class="text-base font-bold text-slate-800 leading-tight mb-1.5">金融市場常識與職業道德</h4>
-                  <p class="text-xs text-slate-500 font-medium mb-1">財團法人台灣金融研訓院</p>
-                  <p class="text-xs text-slate-400">發照日期 2019年6月 · 永久有效</p>
-                </div>
+                class="flex flex-wrap gap-3 bg-white/40 backdrop-blur-md rounded-3xl p-6 border border-white/60 shadow-sm hover:shadow-md transition-all">
+                <img src="https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white"
+                  alt="HTML5" class="h-[24px] shadow-sm cursor-default hover:scale-105 transition-transform" />
+                <img src="https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3&logoColor=white"
+                  alt="CSS3" class="h-[24px] shadow-sm cursor-default hover:scale-105 transition-transform" />
+                <img src="https://img.shields.io/badge/-SCSS-CC6699?style=flat-square&logo=sass&logoColor=white"
+                  alt="SCSS" class="h-[24px] shadow-sm cursor-default hover:scale-105 transition-transform" />
+                <img
+                  src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"
+                  alt="JavaScript" class="h-[24px] shadow-sm cursor-default hover:scale-105 transition-transform" />
+                <img
+                  src="https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"
+                  alt="TypeScript" class="h-[24px] shadow-sm cursor-default hover:scale-105 transition-transform" />
+                <img src="https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black"
+                  alt="React" class="h-[24px] shadow-sm cursor-default hover:scale-105 transition-transform" />
+                <img src="https://img.shields.io/badge/-Vue.js-4FC08D?style=flat-square&logo=vue.js&logoColor=white"
+                  alt="Vue" class="h-[24px] shadow-sm cursor-default hover:scale-105 transition-transform" />
+                <img src="https://img.shields.io/badge/-Vite-646CFF?style=flat-square&logo=vite&logoColor=white"
+                  alt="Vite" class="h-[24px] shadow-sm cursor-default hover:scale-105 transition-transform" />
+                <img src="https://img.shields.io/badge/-Nuxt.js-00C58E?style=flat-square&logo=nuxt.js&logoColor=white"
+                  alt="Nuxt" class="h-[24px] shadow-sm cursor-default hover:scale-105 transition-transform" />
+                <img src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git"
+                  class="h-[24px] shadow-sm cursor-default hover:scale-105 transition-transform" />
+                <img src="https://img.shields.io/badge/-SVN-809CC9?style=flat-square&logo=subversion&logoColor=white"
+                  alt="SVN" class="h-[24px] shadow-sm cursor-default hover:scale-105 transition-transform" />
+                <img src="https://img.shields.io/badge/-SQL-4479A1?style=flat-square&logo=sqlite&logoColor=white"
+                  alt="SQL" class="h-[24px] shadow-sm cursor-default hover:scale-105 transition-transform" />
+                <img
+                  src="https://img.shields.io/badge/-VSCode-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white"
+                  alt="VSCode" class="h-[24px] shadow-sm cursor-default hover:scale-105 transition-transform" />
               </div>
-
-              <!-- Cert 3 -->
-              <div
-                class="bg-white/40 backdrop-blur-md rounded-2xl p-4 border border-white/60 shadow-sm hover:shadow-md transition-all flex items-start gap-4">
-                <div
-                  class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 shadow-inner flex-shrink-0">
-                  <i data-lucide="terminal" class="w-6 h-6"></i>
-                </div>
-                <div>
-                  <h4 class="text-base font-bold text-slate-800 leading-tight mb-1.5">TQC+ 程式語言 Python3</h4>
-                  <p class="text-xs text-slate-500 font-medium mb-1">財團法人中華民國電腦技能基金會</p>
-                  <p class="text-xs text-slate-400">發照日期 2019年4月 · 永久有效</p>
-                </div>
-              </div>
-
-              <!-- Cert 4 -->
-              <div
-                class="bg-white/40 backdrop-blur-md rounded-2xl p-4 border border-white/60 shadow-sm hover:shadow-md transition-all flex items-start gap-4">
-                <div
-                  class="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600 shadow-inner flex-shrink-0">
-                  <i data-lucide="smartphone" class="w-6 h-6"></i>
-                </div>
-                <div>
-                  <h4 class="text-base font-bold text-slate-800 leading-tight mb-1.5">TQC-OA-行動裝置應用</h4>
-                  <p class="text-xs text-slate-500 font-medium mb-1">財團法人中華民國電腦技能基金會</p>
-                  <p class="text-xs text-slate-400">發照日期 2019年2月 · 永久有效</p>
-                </div>
-              </div>
-
-              <!-- Cert 5 -->
-              <div
-                class="bg-white/40 backdrop-blur-md rounded-2xl p-4 border border-white/60 shadow-sm hover:shadow-md transition-all flex items-start gap-4">
-                <div
-                  class="w-12 h-12 rounded-xl bg-teal-100 flex items-center justify-center text-teal-600 shadow-inner flex-shrink-0">
-                  <i data-lucide="hand-coins" class="w-6 h-6"></i>
-                </div>
-                <div>
-                  <h4 class="text-base font-bold text-slate-800 leading-tight mb-1.5">信託業業務人員信託業務專業測驗</h4>
-                  <p class="text-xs text-slate-500 font-medium mb-1">財團法人台灣金融研訓院</p>
-                  <p class="text-xs text-slate-400">發照日期 2018年10月 · 永久有效</p>
-                </div>
-              </div>
-
-              <!-- Cert 6 -->
-              <div
-                class="bg-white/40 backdrop-blur-md rounded-2xl p-4 border border-white/60 shadow-sm hover:shadow-md transition-all flex items-start gap-4">
-                <div
-                  class="w-12 h-12 rounded-xl bg-cyan-100 flex items-center justify-center text-cyan-600 shadow-inner flex-shrink-0">
-                  <i data-lucide="trending-up" class="w-6 h-6"></i>
-                </div>
-                <div>
-                  <h4 class="text-base font-bold text-slate-800 leading-tight mb-1.5">證券商業務員</h4>
-                  <p class="text-xs text-slate-500 font-medium mb-1">證券暨期貨市場發展基金會</p>
-                  <p class="text-xs text-slate-400">發照日期 2018年8月 · 永久有效</p>
-                </div>
-              </div>
-
             </div>
-          </div>
 
-        </div>
-      </div>
+            <!-- Certifications Section -->
+            <div>
+              <div class="flex items-center gap-3 mb-6">
+                <div
+                  class="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600 shadow-inner flex-shrink-0">
+                  <i data-lucide="award" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-slate-800">專業證照</h3>
+                  <p class="text-xs text-slate-500 font-medium">Certifications</p>
+                </div>
+              </div>
 
-      <!-- Right Sidebar (Properties / Tech Stack) -->
-      <div
-        class="w-full md:w-56 lg:w-60 bg-white/20 border-t md:border-t-0 md:border-l border-white/30 backdrop-blur-md flex-shrink-0 md:h-full md:overflow-y-auto scrollbar-hide">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <!-- Cert 1 -->
+                <div
+                  class="bg-white/40 backdrop-blur-md rounded-2xl p-4 border border-white/60 shadow-sm hover:shadow-md transition-all flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 shadow-inner flex-shrink-0">
+                    <i data-lucide="shield-check" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-base font-bold text-slate-800 leading-tight mb-1.5">財產保險業務員資格</h4>
+                    <p class="text-xs text-slate-500 font-medium mb-1">財團法人台灣金融研訓院</p>
+                    <p class="text-xs text-slate-400">發照日期 2019年8月 · 永久有效</p>
+                  </div>
+                </div>
 
-        <div class="p-6 md:p-8">
+                <!-- Cert 2 -->
+                <div
+                  class="bg-white/40 backdrop-blur-md rounded-2xl p-4 border border-white/60 shadow-sm hover:shadow-md transition-all flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 shadow-inner flex-shrink-0">
+                    <i data-lucide="landmark" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-base font-bold text-slate-800 leading-tight mb-1.5">金融市場常識與職業道德</h4>
+                    <p class="text-xs text-slate-500 font-medium mb-1">財團法人台灣金融研訓院</p>
+                    <p class="text-xs text-slate-400">發照日期 2019年6月 · 永久有效</p>
+                  </div>
+                </div>
 
-          <!-- UI 更新：與參考圖對齊的標題排版 -->
-          <div class="flex items-start gap-3 mb-8">
-            <i data-lucide="sliders-horizontal" class="w-5 h-5 text-slate-600 mt-1"></i>
-            <div class="flex flex-col text-slate-700 leading-tight gap-1">
-              <span class="text-[15px] font-bold">技能/工具</span>
-              <span class="text-[13px] font-medium text-slate-500">(Skills & Tools)</span>
+                <!-- Cert 3 -->
+                <div
+                  class="bg-white/40 backdrop-blur-md rounded-2xl p-4 border border-white/60 shadow-sm hover:shadow-md transition-all flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 shadow-inner flex-shrink-0">
+                    <i data-lucide="terminal" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-base font-bold text-slate-800 leading-tight mb-1.5">TQC+ 程式語言 Python3</h4>
+                    <p class="text-xs text-slate-500 font-medium mb-1">財團法人中華民國電腦技能基金會</p>
+                    <p class="text-xs text-slate-400">發照日期 2019年4月 · 永久有效</p>
+                  </div>
+                </div>
+
+                <!-- Cert 4 -->
+                <div
+                  class="bg-white/40 backdrop-blur-md rounded-2xl p-4 border border-white/60 shadow-sm hover:shadow-md transition-all flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600 shadow-inner flex-shrink-0">
+                    <i data-lucide="smartphone" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-base font-bold text-slate-800 leading-tight mb-1.5">TQC-OA-行動裝置應用</h4>
+                    <p class="text-xs text-slate-500 font-medium mb-1">財團法人中華民國電腦技能基金會</p>
+                    <p class="text-xs text-slate-400">發照日期 2019年2月 · 永久有效</p>
+                  </div>
+                </div>
+
+                <!-- Cert 5 -->
+                <div
+                  class="bg-white/40 backdrop-blur-md rounded-2xl p-4 border border-white/60 shadow-sm hover:shadow-md transition-all flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-teal-100 flex items-center justify-center text-teal-600 shadow-inner flex-shrink-0">
+                    <i data-lucide="hand-coins" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-base font-bold text-slate-800 leading-tight mb-1.5">信託業業務人員信託業務專業測驗</h4>
+                    <p class="text-xs text-slate-500 font-medium mb-1">財團法人台灣金融研訓院</p>
+                    <p class="text-xs text-slate-400">發照日期 2018年10月 · 永久有效</p>
+                  </div>
+                </div>
+
+                <!-- Cert 6 -->
+                <div
+                  class="bg-white/40 backdrop-blur-md rounded-2xl p-4 border border-white/60 shadow-sm hover:shadow-md transition-all flex items-start gap-4">
+                  <div
+                    class="w-12 h-12 rounded-xl bg-cyan-100 flex items-center justify-center text-cyan-600 shadow-inner flex-shrink-0">
+                    <i data-lucide="trending-up" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-base font-bold text-slate-800 leading-tight mb-1.5">證券商業務員</h4>
+                    <p class="text-xs text-slate-500 font-medium mb-1">證券暨期貨市場發展基金會</p>
+                    <p class="text-xs text-slate-400">發照日期 2018年8月 · 永久有效</p>
+                  </div>
+                </div>
+
+              </div>
             </div>
-          </div>
 
-          <!-- Tags Container -->
-          <div class="flex flex-wrap gap-2.5">
-            <img src="https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white"
-              alt="HTML5" class="h-[22px] shadow-sm cursor-default hover:scale-105 transition-transform" />
-            <img src="https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3&logoColor=white" alt="CSS3"
-              class="h-[22px] shadow-sm cursor-default hover:scale-105 transition-transform" />
-            <img src="https://img.shields.io/badge/-SCSS-CC6699?style=flat-square&logo=sass&logoColor=white" alt="SCSS"
-              class="h-[22px] shadow-sm cursor-default hover:scale-105 transition-transform" />
-            <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"
-              alt="JavaScript" class="h-[22px] shadow-sm cursor-default hover:scale-105 transition-transform" />
-            <img src="https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"
-              alt="TypeScript" class="h-[22px] shadow-sm cursor-default hover:scale-105 transition-transform" />
-            <img src="https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black"
-              alt="React" class="h-[22px] shadow-sm cursor-default hover:scale-105 transition-transform" />
-            <img src="https://img.shields.io/badge/-Vue.js-4FC08D?style=flat-square&logo=vue.js&logoColor=white"
-              alt="Vue" class="h-[22px] shadow-sm cursor-default hover:scale-105 transition-transform" />
-            <img src="https://img.shields.io/badge/-Vite-646CFF?style=flat-square&logo=vite&logoColor=white" alt="Vite"
-              class="h-[22px] shadow-sm cursor-default hover:scale-105 transition-transform" />
-            <img src="https://img.shields.io/badge/-Nuxt.js-00C58E?style=flat-square&logo=nuxt.js&logoColor=white"
-              alt="Nuxt" class="h-[22px] shadow-sm cursor-default hover:scale-105 transition-transform" />
-            <img src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git"
-              class="h-[22px] shadow-sm cursor-default hover:scale-105 transition-transform" />
-            <img src="https://img.shields.io/badge/-SVN-809CC9?style=flat-square&logo=subversion&logoColor=white"
-              alt="SVN" class="h-[22px] shadow-sm cursor-default hover:scale-105 transition-transform" />
-            <img src="https://img.shields.io/badge/-SQL-4479A1?style=flat-square&logo=sqlite&logoColor=white" alt="SQL"
-              class="h-[22px] shadow-sm cursor-default hover:scale-105 transition-transform" />
-            <img
-              src="https://img.shields.io/badge/-VSCode-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white"
-              alt="VSCode" class="h-[22px] shadow-sm cursor-default hover:scale-105 transition-transform" />
           </div>
 
         </div>

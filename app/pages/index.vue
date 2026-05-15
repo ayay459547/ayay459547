@@ -1,19 +1,14 @@
 <script setup lang="ts">
-import HeroSection from '~/components/HeroSection.vue'
-import ValueProposition from '~/components/ValueProposition.vue'
-import TechStack from '~/components/TechStack.vue'
-import FinalCTA from '~/components/FinalCTA.vue'
+defineProps<{
+  activeTab: string
+}>()
 </script>
 
 <template>
-  <!-- Hero Section -->
-  <HeroSection />
-  <!-- Value Proposition Section -->
-  <ValueProposition />
-  <!-- Tech Stack Section -->
-  <TechStack />
-  <!-- Final CTA Section -->
-  <FinalCTA />
+  <div class="h-full">
+    <ProfileTab v-if="activeTab === 'profile'" />
+    <ExperienceTab v-else-if="activeTab === 'experience'" />
+    <ProjectsTab v-else-if="activeTab === 'projects'" />
+    <SkillsCertsTab v-else-if="activeTab === 'skills-certs'" />
+  </div>
 </template>
-
-<style lang="sass" scoped></style>

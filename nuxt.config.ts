@@ -45,7 +45,7 @@ console.log(
 )
 
 export default defineNuxtConfig({
-  // ssr: false,
+  ssr: true,
   compatibilityDate: COMPATIBILITYDATE,
   devtools: { enabled: true },
 
@@ -61,7 +61,6 @@ export default defineNuxtConfig({
         preconnect: true // 會自動生成 preconnect
       }
     ],
-    ,
     '@nuxtjs/tailwindcss'
   ],
 
@@ -77,7 +76,7 @@ export default defineNuxtConfig({
     }
   },
 
-  css: ['~/assets/reset.css', '~/assets/normalize.css'],
+  css: ['~/assets/reset.css', '~/assets/normalize.css', '~/assets/main.css'],
 
   vite: {
     // css: {
