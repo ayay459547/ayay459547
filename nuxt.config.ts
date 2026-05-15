@@ -62,7 +62,29 @@ export default defineNuxtConfig({
   // 應用程式路徑設定 (針對 GitHub Pages)
   app: {
     baseURL: NUXT_PUBLIC_BASE_URL,
-    buildAssetsDir: '_nuxt'
+    // buildAssetsDir: '_nuxt',
+    head: {
+      title: 'Chen Chan Hsieh | Personal Portfolio',
+      htmlAttrs: {
+        lang: 'zh-TW'
+      },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          name: 'description',
+          content:
+            'Chen Chan Hsieh 的個人網站 - 展示工作經驗、專案作品與技能證照。'
+        },
+        { name: 'format-detection', content: 'telephone=no' },
+        {
+          name: 'keywords',
+          content:
+            'Chen Chan Hsieh, 謝禎展, Portfolio, 前端工程師, 網頁開發, Nuxt, Vue'
+        }
+      ],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    }
   },
 
   // Tailwind 設定：確保雲端打包時能抓到檔案

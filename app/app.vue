@@ -5,6 +5,18 @@ import { Icon } from '@iconify/vue'
 const config = useRuntimeConfig()
 const activeTab = ref('profile')
 
+useSeoMeta({
+  title: 'Chen Chan Hsieh | Personal Portfolio',
+  ogTitle: 'Chen Chan Hsieh | Personal Portfolio',
+  description: '探索 Chen Chan Hsieh 的個人專業作品集，包含工作經驗、專案展示、技能與證照。',
+  ogDescription: '探索 Chen Chan Hsieh 的個人專業作品集，包含工作經驗、專案展示、技能與證照。',
+  ogImage: '~/assets/images/Caleb.jpg',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Chen Chan Hsieh | Personal Portfolio',
+  twitterDescription: '探索 Chen Chan Hsieh 的個人專業作品集，包含工作經驗、專案展示、技能與證照。',
+  twitterImage: '~/assets/images/Caleb.jpg'
+})
+
 onMounted(() => {
   console.log('CONFIG:', config.public)
 })
