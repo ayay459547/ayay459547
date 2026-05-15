@@ -42,9 +42,6 @@ console.log(
 
 export default defineNuxtConfig({
   ssr: true,
-  // future: {
-  //   compatibilityVersion: 4
-  // },
   compatibilityDate: COMPATIBILITY_DATE as any,
   devtools: { enabled: true },
 
@@ -66,6 +63,13 @@ export default defineNuxtConfig({
   app: {
     baseURL: NUXT_PUBLIC_BASE_URL,
     buildAssetsDir: '_nuxt'
+  },
+
+  // Tailwind 設定：確保雲端打包時能抓到檔案
+  tailwindcss: {
+    configPath: 'tailwind.config',
+    exposeConfig: false,
+    viewer: true
   },
 
   // 全域變數 (可在組件中透過 useRuntimeConfig() 取得)
