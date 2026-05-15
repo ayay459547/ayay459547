@@ -72,9 +72,9 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Static HTML export with Nuxt
         env:
-          NUXT_ENV_TYPE: PRODUCTION
-          NUXT_VERSION: ${{ github.sha }}
-          NUXT_BASE_URL: /
+          NUXT_PUBLIC_TYPE: PRODUCTION
+          NUXT_PUBLIC_VERSION: ${{ github.sha }}
+          NUXT_PUBLIC_BASE_URL: /
           NUXT_PUBLIC_URL: https://chen-chan-hsieh.cc/
         run: ${{ steps.detect-package-manager.outputs.manager }} run generate
       - name: Upload artifact

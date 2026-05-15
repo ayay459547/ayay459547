@@ -9,7 +9,8 @@ const config: Config = {
     './app.vue',
     './error.vue',
     './app/**/*.{js,vue,ts}',
-    './src/**/*.{js,vue,ts}'
+    './src/**/*.{js,vue,ts}',
+    './pages/**/*.{js,vue,ts}'
   ],
   theme: {
     extend: {
