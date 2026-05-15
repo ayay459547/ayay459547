@@ -6,7 +6,7 @@ const config = useRuntimeConfig()
 const activeTab = ref('profile')
 
 onMounted(() => {
-  console.log('NUXT_VERSION:', config.public.version)
+  console.log('CONFIG:', config.public)
 })
 
 const navItems = [

@@ -2,13 +2,14 @@ import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
-    './components/**/*.{vue,ts}',
+    './components/**/*.{js,vue,ts}',
     './layouts/**/*.vue',
     './pages/**/*.vue',
+    './plugins/**/*.{js,ts}',
     './app.vue',
-    './plugins/**/*.{ts,js}',
     './error.vue',
-    './app/**/*.{js,vue,ts}'
+    './app/**/*.{js,vue,ts}',
+    './src/**/*.{js,vue,ts}'
   ],
   theme: {
     extend: {
