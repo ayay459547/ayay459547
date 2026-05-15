@@ -91,6 +91,10 @@ export default defineNuxtConfig({
           drop_debugger: true
         }
       }
+    },
+
+    optimizeDeps: {
+      include: ['@iconify/vue', '@vue/devtools-core', '@vue/devtools-kit']
     }
   }
 })
