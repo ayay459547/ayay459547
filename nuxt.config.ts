@@ -49,7 +49,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   // 模組設定
-  modules: ['@nuxtjs/google-fonts', '@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/google-fonts', '@nuxtjs/tailwindcss', '@nuxt/eslint'],
 
   // Google Fonts
   googleFonts: {

@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import ProfileTab from '~/components/ProfileTab.vue'
+import ExperienceTab from '~/components/ExperienceTab.vue'
+import ProjectsTab from '~/components/ProjectsTab.vue'
+import SkillsCertsTab from '~/components/SkillsCertsTab.vue'
+
 defineProps<{
   activeTab: string
 }>()
