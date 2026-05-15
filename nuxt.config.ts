@@ -4,7 +4,7 @@ const NUXT_BUILD_VERSION = '2026-04-02.1'
 
 // 建議使用 process.env 確保在所有 Nuxt 生命週期都能正確讀取 .env
 const NUXT_ENV_TYPE = process.env.NUXT_ENV_TYPE || 'DEV'
-const NUXT_SYSTEM_VERSION = process.env.NUXT_SYSTEM_VERSION || '0.0.0'
+const NUXT_VERSION = process.env.NUXT_VERSION || '0.0.0'
 const NUXT_BASE_URL = process.env.NUXT_BASE_URL || '/'
 const NUXT_PUBLIC_URL = process.env.NUXT_PUBLIC_URL || '/'
 
@@ -30,7 +30,7 @@ console.log(
 )
 console.table({
   系統類型: NUXT_ENV_TYPE,
-  系統版本: NUXT_SYSTEM_VERSION,
+  系統版本: NUXT_VERSION,
   Base_Url: NUXT_BASE_URL,
   Public_Url: NUXT_PUBLIC_URL,
   打包版本: NUXT_BUILD_VERSION
@@ -69,7 +69,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       type: NUXT_ENV_TYPE,
-      version: NUXT_SYSTEM_VERSION,
+      version: NUXT_VERSION,
       baseURL: NUXT_BASE_URL,
       publicURL: NUXT_PUBLIC_URL,
       buildVersion: NUXT_BUILD_VERSION

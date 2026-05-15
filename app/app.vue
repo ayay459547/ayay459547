@@ -1,8 +1,13 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { Icon } from '@iconify/vue'
 
+const config = useRuntimeConfig()
 const activeTab = ref('profile')
+
+onMounted(() => {
+  console.log('NUXT_VERSION:', config.public.version)
+})
 
 const navItems = [
   {
