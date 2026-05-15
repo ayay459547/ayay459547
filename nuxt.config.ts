@@ -3,10 +3,10 @@ const COMPATIBILITY_DATE = '2026-05-15'
 const NUXT_BUILD_VERSION = '2026-05-15.1'
 
 // 建議使用 process.env 確保在所有 Nuxt 生命週期都能正確讀取 .env
-const NUXT_PUBLIC_TYPE = process.env.NUXT_PUBLIC_TYPE || 'DEV'
-const NUXT_PUBLIC_VERSION = process.env.NUXT_PUBLIC_VERSION || '0.0.0'
-const NUXT_PUBLIC_BASE_URL = process.env.NUXT_PUBLIC_BASE_URL || '/'
-const NUXT_PUBLIC_URL = process.env.NUXT_PUBLIC_URL || '/'
+const NUXT_APP_TYPE = process.env.NUXT_APP_TYPE || 'DEV'
+const NUXT_APP_VERSION = process.env.NUXT_APP_VERSION || '0.0.0'
+const NUXT_APP_BASE_URL = process.env.NUXT_APP_BASE_URL || '/'
+const NUXT_APP_URL = process.env.NUXT_APP_URL || '/'
 
 // 當前日期時間
 const formattedDate = new Intl.DateTimeFormat('zh-TW', {
@@ -29,10 +29,10 @@ console.log(
   `(執行時間: ${formattedDate})`
 )
 console.table({
-  系統類型: NUXT_PUBLIC_TYPE,
-  系統版本: NUXT_PUBLIC_VERSION,
-  Base_Url: NUXT_PUBLIC_BASE_URL,
-  Public_Url: NUXT_PUBLIC_URL,
+  系統類型: NUXT_APP_TYPE,
+  系統版本: NUXT_APP_VERSION,
+  Base_Url: NUXT_APP_BASE_URL,
+  Public_Url: NUXT_APP_URL,
   打包版本: NUXT_BUILD_VERSION
 })
 console.log('\x1B[43m%s\x1B[0m', ' 注意打包版本是否有更新 ')
@@ -61,7 +61,7 @@ export default defineNuxtConfig({
 
   // 應用程式路徑設定 (針對 GitHub Pages)
   app: {
-    baseURL: NUXT_PUBLIC_BASE_URL,
+    baseURL: NUXT_APP_BASE_URL,
     // buildAssetsDir: '_nuxt',
     buildAssetsDir: 'assets',
     head: {
@@ -98,10 +98,10 @@ export default defineNuxtConfig({
   // 全域變數 (可在組件中透過 useRuntimeConfig() 取得)
   runtimeConfig: {
     public: {
-      type: NUXT_PUBLIC_TYPE,
-      version: NUXT_PUBLIC_VERSION,
-      baseURL: NUXT_PUBLIC_BASE_URL,
-      publicURL: NUXT_PUBLIC_URL,
+      type: NUXT_APP_TYPE,
+      version: NUXT_APP_VERSION,
+      baseURL: NUXT_APP_BASE_URL,
+      publicURL: NUXT_APP_URL,
       buildVersion: NUXT_BUILD_VERSION
     }
   },
