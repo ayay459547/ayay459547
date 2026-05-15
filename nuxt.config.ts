@@ -41,10 +41,8 @@ console.log(
 )
 
 export default defineNuxtConfig({
-  ssr: false,
-  future: {
-    compatibilityVersion: 4
-  },
+  srcDir: 'app',
+  ssr: true,
   compatibilityDate: COMPATIBILITY_DATE as any,
   devtools: { enabled: true },
 
@@ -80,23 +78,5 @@ export default defineNuxtConfig({
   },
 
   // CSS 載入
-  css: ['~/assets/reset.css', '~/assets/normalize.css', '~/assets/main.css'],
-
-  // 建置優化
-  vite: {
-    build: {
-      // 若要讓 terserOptions 生效，需確保安裝了 terser 套件
-      minify: 'terser',
-      terserOptions: {
-        compress: {
-          drop_console: false, // 依需求保留 console
-          drop_debugger: true
-        }
-      }
-    },
-
-    optimizeDeps: {
-      include: ['@iconify/vue', '@vue/devtools-core', '@vue/devtools-kit']
-    }
-  }
+  css: ['~/assets/reset.css', '~/assets/normalize.css', '~/assets/main.css']
 })
