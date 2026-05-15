@@ -71,6 +71,11 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Static HTML export with Nuxt
+        env:
+          NUXT_ENV_TYPE: PRODUCTION
+          NUXT_VERSION: ${{ github.sha }}
+          NUXT_BASE_URL: /
+          NUXT_PUBLIC_URL: https://chen-chan-hsieh.cc/
         run: ${{ steps.detect-package-manager.outputs.manager }} run generate-production
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
