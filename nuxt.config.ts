@@ -63,6 +63,7 @@ export default defineNuxtConfig({
   app: {
     baseURL: NUXT_PUBLIC_BASE_URL,
     // buildAssetsDir: '_nuxt',
+    buildAssetsDir: 'assets',
     head: {
       title: 'Chen Chan Hsieh | Personal Portfolio',
       htmlAttrs: {
