@@ -83,7 +83,13 @@ export default defineNuxtConfig({
             'Chen Chan Hsieh, 謝禎展, Portfolio, 前端工程師, 網頁開發, Nuxt, Vue'
         }
       ],
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+      // 暫時
+      script: [
+        {
+          src: 'https://cdn.tailwindcss.com'
+        }
+      ]
     }
   },
 
