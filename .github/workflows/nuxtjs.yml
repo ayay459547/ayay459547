@@ -75,7 +75,7 @@ jobs:
           NUXT_PUBLIC_TYPE: PRODUCTION
           NUXT_PUBLIC_VERSION: ${{ github.sha }}
           NUXT_PUBLIC_BASE_URL: /
-          NUXT_PUBLIC_URL: https://chen-chan-hsieh.cc/
+          NUXT_PUBLIC_URL: /chen-chan-hsieh.cc/
         run: ${{ steps.detect-package-manager.outputs.manager }} run generate-production
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

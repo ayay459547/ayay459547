@@ -65,7 +65,7 @@ export default defineNuxtConfig({
   // 應用程式路徑設定 (針對 GitHub Pages)
   app: {
     baseURL: NUXT_PUBLIC_BASE_URL,
-    buildAssetsDir: '/_nuxt/'
+    buildAssetsDir: '_nuxt'
   },
 
   // 全域變數 (可在組件中透過 useRuntimeConfig() 取得)
