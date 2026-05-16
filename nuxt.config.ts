@@ -1,14 +1,12 @@
-// 根據你的需求設定的常數
 const COMPATIBILITY_DATE = '2026-05-10'
 const NUXT_BUILD_VERSION = '2026-05-10.1'
 
-// 建議使用 process.env 確保在所有 Nuxt 生命週期都能正確讀取 .env
 const NUXT_APP_TYPE = process.env.NUXT_APP_TYPE || 'DEV'
 const NUXT_APP_VERSION = process.env.NUXT_APP_VERSION || '0.0.0'
 const NUXT_APP_BASE_URL = process.env.NUXT_APP_BASE_URL || '/'
 const NUXT_APP_URL = process.env.NUXT_APP_URL || '/'
 
-// 當前日期時間
+// 日期時間
 const formattedDate = new Intl.DateTimeFormat('zh-TW', {
   year: 'numeric',
   month: '2-digit',
@@ -46,7 +44,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   // 模組設定
-  modules: ['@nuxtjs/google-fonts', '@nuxtjs/tailwindcss', '@nuxt/eslint'],
+  modules: ['@nuxtjs/google-fonts', '@nuxt/eslint', '@nuxt/ui'],
 
   // Google Fonts
   googleFonts: {
@@ -62,7 +60,7 @@ export default defineNuxtConfig({
   // 應用程式路徑設定 (針對 GitHub Pages)
   app: {
     baseURL: NUXT_APP_BASE_URL,
-    // buildAssetsDir: '_nuxt',
+    buildAssetsDir: '_nuxt',
     head: {
       title: 'Chen Chan Hsieh | Personal Portfolio',
       htmlAttrs: {
@@ -87,13 +85,6 @@ export default defineNuxtConfig({
     }
   },
 
-  // Tailwind 設定：確保雲端打包時能抓到檔案
-  tailwindcss: {
-    configPath: 'tailwind.config',
-    exposeConfig: false,
-    viewer: true
-  },
-
   // 全域變數 (可在組件中透過 useRuntimeConfig() 取得)
   runtimeConfig: {
     public: {
@@ -106,5 +97,11 @@ export default defineNuxtConfig({
   },
 
   // CSS 載入
-  css: ['~/assets/reset.css', '~/assets/normalize.css', '~/assets/main.css']
+  css: ['~/assets/css/main.css', '~/assets/css/normalize.css'],
+
+  vite: {
+    optimizeDeps: {
+      include: ['@iconify/vue', '@vue/devtools-core', '@vue/devtools-kit']
+    }
+  }
 })
