@@ -48,7 +48,7 @@ const colorClasses: Record<string, string> = {
       <div v-for="(exp, index) in experiences" :key="index"
         class="bg-white/40 backdrop-blur-md rounded-3xl p-5 md:p-6 border border-white/60 shadow-sm hover:shadow-md transition-all">
         <div class="flex items-center gap-4 mb-3">
-          <div :class="['w-12 h-12 rounded-2xl flex items-center justify-center shadow-inner flex-shrink-0', colorClasses[exp.color]]">
+          <div :class="['w-12 h-12 rounded-2xl flex items-center justify-center shadow-inner shrink-0', colorClasses[exp.color]]">
             <Icon :icon="exp.icon" class="w-6 h-6" />
           </div>
           <div>

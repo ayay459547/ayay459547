@@ -11,9 +11,17 @@ defineProps<{
 
 <template>
   <div class="h-full">
-    <ProfileTab v-show="activeTab === 'profile'" />
-    <ExperienceTab v-show="activeTab === 'experience'" />
-    <ProjectsTab v-show="activeTab === 'projects'" />
-    <SkillsCertsTab v-show="activeTab === 'skills-certs'" />
+    <KeepAlive>
+      <ProfileTab v-if="activeTab === 'profile'" />
+    </KeepAlive>
+    <KeepAlive>
+      <ExperienceTab v-if="activeTab === 'experience'" />
+    </KeepAlive>
+    <KeepAlive>
+      <ProjectsTab v-if="activeTab === 'projects'" />
+    </KeepAlive>
+    <KeepAlive>
+      <SkillsCertsTab v-if="activeTab === 'skills-certs'" />
+    </KeepAlive>
   </div>
 </template>

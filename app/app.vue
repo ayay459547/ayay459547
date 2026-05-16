@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { Icon } from '@iconify/vue'
+import { ref } from 'vue'
+// import { Icon } from '@iconify/vue'
 
-const config = useRuntimeConfig()
 const activeTab = ref('profile')
 
 useSeoMeta({
@@ -17,40 +16,40 @@ useSeoMeta({
   twitterImage: '~/assets/images/Caleb.jpg'
 })
 
-onMounted(() => {
-  console.log('CONFIG:', config.public)
-})
-
 const navItems = [
   {
     id: 'profile',
     label: '個人簡介',
     sublabel: 'Profile',
-    icon: 'lucide:user'
+    // icon: 'lucide:user'
+    icon: 'fluent:person-board-28-regular'
   },
   {
     id: 'experience',
     label: '工作經驗',
     sublabel: 'Experience',
-    icon: 'lucide:briefcase'
+    // icon: 'lucide:briefcase'
+    icon: 'fluent:briefcase-12-regular'
   },
   {
     id: 'projects',
     label: '專案展示',
     sublabel: 'Projects',
-    icon: 'lucide:layers'
+    // icon: 'lucide:layers'
+    icon: 'fluent:layer-diagonal-sparkle-16-regular'
   },
   {
     id: 'skills-certs',
     label: '技能與證照',
     sublabel: 'Skills & Certs',
+    // icon: 'lucide:award'
     icon: 'lucide:award'
   }
 ]
 
 function switchTab(tabId: string) {
   activeTab.value = tabId
-  if (process.client && window.innerWidth < 768) {
+  if (import.meta.client && window.innerWidth < 768) {
     document
       .getElementById('mobile-scroll-wrapper')
       ?.scrollTo({ top: 0, behavior: 'smooth' })
@@ -117,7 +116,8 @@ function switchTab(tabId: string) {
             rel="noreferrer"
             class="md:hidden flex items-center justify-center w-10 h-10 bg-white/80 hover:bg-white text-slate-800 rounded-xl transition-all shadow-sm border border-white/60"
           >
-            <Icon icon="lucide:github" class="w-5 h-5" />
+            <!-- <Icon icon="lucide:github" class="w-5 h-5" /> -->
+            <NuxtIcon name="grommet-icons:github" class="w-5 h-5" />
           </a>
         </div>
 
@@ -128,15 +128,16 @@ function switchTab(tabId: string) {
           <button
             v-for="item in navItems"
             :key="item.id"
-            @click="switchTab(item.id)"
             :class="[
               'w-full flex flex-row items-center justify-start gap-4 px-5 py-5 rounded-[1.25rem] cursor-pointer transition-all duration-300 nav-item',
               activeTab === item.id
                 ? 'bg-blue-500 text-white shadow-xl shadow-blue-500/30 scale-[1.02]'
                 : 'text-slate-500 hover:bg-white/60'
             ]"
+            @click="switchTab(item.id)"
           >
-            <Icon :icon="item.icon" class="w-5 h-5" />
+            <!-- <Icon :icon="item.icon" class="w-5 h-5" /> -->
+            <NuxtIcon :name="item.icon" class="w-5 h-5" />
             <div class="flex flex-col items-start text-left text-current">
               <span class="text-[15px] font-bold tracking-wide leading-tight">{{
                 item.label
@@ -158,7 +159,8 @@ function switchTab(tabId: string) {
             rel="noreferrer"
             class="w-full flex items-center justify-center gap-2 px-4 py-3 bg-white/80 hover:bg-white text-slate-800 rounded-2xl text-sm font-bold transition-all shadow-sm border border-white/60 hover:shadow-md hover:-translate-y-0.5"
           >
-            <Icon icon="lucide:github" class="w-4.5 h-4.5" />
+            <!-- <Icon icon="lucide:github" class="w-4.5 h-4.5" /> -->
+            <NuxtIcon name="grommet-icons:github" class="w-4.5 h-4.5" />
             GitHub
           </a>
         </div>
@@ -171,15 +173,16 @@ function switchTab(tabId: string) {
         <button
           v-for="item in navItems"
           :key="item.id"
-          @click="switchTab(item.id)"
           :class="[
             'flex-1 flex flex-col items-center justify-center gap-1.5 px-2 py-2.5 rounded-[1.25rem] cursor-pointer transition-all duration-300 nav-item',
             activeTab === item.id
               ? 'bg-blue-500 text-white shadow-xl shadow-blue-500/30 scale-[1.02]'
               : 'text-slate-500 hover:bg-white/60'
           ]"
+          @click="switchTab(item.id)"
         >
-          <Icon :icon="item.icon" class="w-5 h-5" />
+          <!-- <Icon :icon="item.icon" class="w-5 h-5" /> -->
+          <NuxtIcon :name="item.icon" class="w-5 h-5" />
           <div class="flex flex-col items-center text-current text-center">
             <span
               class="text-[12px] font-bold tracking-wide leading-tight whitespace-nowrap"
@@ -202,7 +205,7 @@ function switchTab(tabId: string) {
           class="flex-1 min-w-0 flex flex-col relative bg-white/20 md:h-full md:overflow-y-auto scrollbar-hide"
         >
           <div class="flex-1 p-4 md:p-8 lg:p-12 relative">
-            <NuxtPage :activeTab="activeTab" />
+            <NuxtPage :active-tab="activeTab" />
           </div>
         </div>
       </div>

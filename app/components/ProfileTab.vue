@@ -6,16 +6,16 @@ import { Icon } from '@iconify/vue'
   <div class="max-w-3xl mx-auto flex flex-col items-center justify-center min-h-full animate-fade-in py-8">
     <!-- 3D-like Glowing Element -->
     <div class="relative w-32 h-32 md:w-48 md:h-48 mb-8 group perspective-1000">
-      <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-[2rem] shadow-[0_0_80px_-20px_rgba(59,130,246,0.6)] transform transition-transform duration-500 group-hover:rotate-x-12 group-hover:rotate-y-12" style="transform-style: preserve-3d;">
-        <div class="absolute inset-0 bg-white/20 rounded-[2rem] backdrop-blur-sm border border-white/40"></div>
+      <div class="absolute inset-0 bg-linear-to-br from-blue-400 to-indigo-600 rounded-4xl shadow-[0_0_80px_-20px_rgba(59,130,246,0.6)] transform transition-transform duration-500 group-hover:rotate-x-12 group-hover:rotate-y-12" style="transform-style: preserve-3d;">
+        <div class="absolute inset-0 bg-white/20 rounded-4xl backdrop-blur-sm border border-white/40"></div>
         <!-- Inner concentric rings -->
-        <div class="absolute inset-4 rounded-[1.5rem] border border-white/30 bg-gradient-to-t from-white/10 to-transparent flex items-center justify-center shadow-inner">
+        <div class="absolute inset-4 rounded-[1.5rem] border border-white/30 bg-linear-to-t from-white/10 to-transparent flex items-center justify-center shadow-inner">
           <div class="w-16 h-16 bg-white/90 rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.1)] backdrop-blur-md flex items-center justify-center">
             <Icon icon="lucide:code-2" class="w-8 h-8 text-blue-500" />
           </div>
         </div>
         <!-- Glossy highlight -->
-        <div class="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/40 to-transparent rounded-t-[2rem] pointer-events-none"></div>
+        <div class="absolute top-0 left-0 w-full h-1/2 bg-linear-to-b from-white/40 to-transparent rounded-t-4xl pointer-events-none"></div>
       </div>
     </div>
 
@@ -30,7 +30,7 @@ import { Icon } from '@iconify/vue'
 
       <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-800 tracking-tight leading-tight">
         建構具備商業價值的 <br />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">現代化前端應用</span>
+        <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-cyan-500">現代化前端應用</span>
       </h2>
 
       <p class="text-base text-slate-600 max-w-2xl mx-auto leading-relaxed pt-2">

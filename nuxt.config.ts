@@ -1,7 +1,6 @@
 const COMPATIBILITY_DATE = '2026-05-10'
 const NUXT_BUILD_VERSION = '2026-05-10.1'
 
-const NUXT_APP_TYPE = process.env.NUXT_APP_TYPE || 'DEV'
 const NUXT_APP_VERSION = process.env.NUXT_APP_VERSION || '0.0.0'
 const NUXT_APP_BASE_URL = process.env.NUXT_APP_BASE_URL || '/'
 const NUXT_APP_URL = process.env.NUXT_APP_URL || '/'
@@ -27,7 +26,6 @@ console.log(
   `(執行時間: ${formattedDate})`
 )
 console.table({
-  系統類型: NUXT_APP_TYPE,
   系統版本: NUXT_APP_VERSION,
   Base_Url: NUXT_APP_BASE_URL,
   Public_Url: NUXT_APP_URL,
@@ -44,7 +42,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   // 模組設定
-  modules: ['@nuxtjs/google-fonts', '@nuxt/eslint', '@nuxt/ui'],
+  modules: ['@nuxtjs/google-fonts', '@nuxt/eslint', '@nuxt/ui', '@nuxt/icon'],
+
+  icon: {
+    componentName: 'NuxtIcon'
+  },
 
   // Google Fonts
   googleFonts: {
@@ -88,7 +90,6 @@ export default defineNuxtConfig({
   // 全域變數 (可在組件中透過 useRuntimeConfig() 取得)
   runtimeConfig: {
     public: {
-      type: NUXT_APP_TYPE,
       version: NUXT_APP_VERSION,
       baseURL: NUXT_APP_BASE_URL,
       publicURL: NUXT_APP_URL,

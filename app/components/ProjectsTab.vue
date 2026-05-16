@@ -22,9 +22,9 @@ const projects = [
     <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 lg:gap-8 max-w-5xl">
       <div v-for="(project, index) in projects" :key="index"
         class="bg-white/40 backdrop-blur-md rounded-3xl p-6 border border-white/60 shadow-lg hover:shadow-xl transition-all group flex flex-col h-full min-w-0">
-        <div class="h-48 md:h-56 rounded-2xl mb-6 overflow-hidden relative flex-shrink-0">
+        <div class="h-48 md:h-56 rounded-2xl mb-6 overflow-hidden relative shrink-0">
           <img :src="project.image" :alt="project.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/20 to-transparent"></div>
+          <div class="absolute inset-0 bg-linear-to-t from-slate-900/70 via-slate-900/20 to-transparent"></div>
           <div class="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2">
             <span v-for="tag in project.tags" :key="tag"
               class="px-2.5 py-1 bg-white/20 backdrop-blur-md text-white text-xs font-medium rounded-lg border border-white/20">
@@ -33,8 +33,8 @@ const projects = [
           </div>
         </div>
         <div class="flex-1 flex flex-col">
-          <h4 class="text-xl font-bold text-slate-800 mb-3 break-words">{{ project.title }}</h4>
-          <p class="text-sm text-slate-600 leading-relaxed break-words">
+          <h4 class="text-xl font-bold text-slate-800 mb-3 wrap-break-word">{{ project.title }}</h4>
+          <p class="text-sm text-slate-600 leading-relaxed wrap-break-word">
             {{ project.description }}
           </p>
         </div>
