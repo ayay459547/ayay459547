@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue'
+// import { Icon } from '@iconify/vue'
 
 const skills = [
   { name: 'HTML5', color: 'E34F26', logo: 'html5', logoColor: 'white' },
@@ -78,7 +78,7 @@ const colorClasses: Record<string, string> = {
     <div>
       <div class="flex items-center gap-3 mb-6">
         <div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 shadow-inner shrink-0">
-          <Icon icon="lucide:sliders-horizontal" class="w-5 h-5" />
+          <NuxtIcon name="lucide:sliders-horizontal" class="w-5 h-5" />
         </div>
         <div>
           <h3 class="text-xl font-bold text-slate-800">技能與工具</h3>
@@ -87,9 +87,12 @@ const colorClasses: Record<string, string> = {
       </div>
 
       <div class="flex flex-wrap gap-3 bg-white/40 backdrop-blur-md rounded-3xl p-6 border border-white/60 shadow-sm hover:shadow-md transition-all">
-        <img v-for="skill in skills" :key="skill.name"
+        <img
+          v-for="skill in skills"
+          :key="skill.name"
           :src="`https://img.shields.io/badge/-${skill.name}-${skill.color}?style=flat-square&logo=${skill.logo}&logoColor=${skill.logoColor}`"
-          :alt="skill.name" class="h-6 shadow-sm cursor-default hover:scale-105 transition-transform" />
+          :alt="skill.name" class="h-6 shadow-sm cursor-default hover:scale-105 transition-transform"
+        />
       </div>
     </div>
 
@@ -97,7 +100,7 @@ const colorClasses: Record<string, string> = {
     <div>
       <div class="flex items-center gap-3 mb-6">
         <div class="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600 shadow-inner shrink-0">
-          <Icon icon="lucide:award" class="w-5 h-5" />
+          <NuxtIcon name="lucide:award" class="w-5 h-5" />
         </div>
         <div>
           <h3 class="text-xl font-bold text-slate-800">專業證照</h3>
@@ -106,10 +109,13 @@ const colorClasses: Record<string, string> = {
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div v-for="(cert, index) in certs" :key="index"
-          class="bg-white/40 backdrop-blur-md rounded-2xl p-4 border border-white/60 shadow-sm hover:shadow-md transition-all flex items-start gap-4">
+        <div
+          v-for="(cert, index) in certs"
+          :key="index"
+          class="bg-white/40 backdrop-blur-md rounded-2xl p-4 border border-white/60 shadow-sm hover:shadow-md transition-all flex items-start gap-4"
+        >
           <div :class="['w-12 h-12 rounded-xl flex items-center justify-center shadow-inner shrink-0', colorClasses[cert.color]]">
-            <Icon :icon="cert.icon" class="w-6 h-6" />
+            <NuxtIcon :name="cert.icon" class="w-6 h-6" />
           </div>
           <div>
             <h4 class="text-base font-bold text-slate-800 leading-tight mb-1.5">{{ cert.title }}</h4>

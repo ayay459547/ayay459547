@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue'
+// import { Icon } from '@iconify/vue'
 </script>
 
 <template>
@@ -11,7 +11,7 @@ import { Icon } from '@iconify/vue'
         <!-- Inner concentric rings -->
         <div class="absolute inset-4 rounded-[1.5rem] border border-white/30 bg-linear-to-t from-white/10 to-transparent flex items-center justify-center shadow-inner">
           <div class="w-16 h-16 bg-white/90 rounded-full shadow-[0_10px_30px_rgba(0,0,0,0.1)] backdrop-blur-md flex items-center justify-center">
-            <Icon icon="lucide:code-2" class="w-8 h-8 text-blue-500" />
+            <NuxtIcon name="lucide:code-2" class="w-8 h-8 text-blue-500" />
           </div>
         </div>
         <!-- Glossy highlight -->
