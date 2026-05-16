@@ -60,7 +60,7 @@ function switchTab(tabId: string) {
 
 <template>
   <div
-    class="bg-slate-50 relative flex items-center justify-center h-[100dvh] w-full overflow-hidden font-sans selection:bg-blue-200 selection:text-blue-900 text-slate-800 p-2 md:p-8"
+    class="bg-slate-50 relative flex items-center justify-center h-dvh w-full overflow-hidden font-sans selection:bg-blue-200 selection:text-blue-900 text-slate-800 p-2 md:p-8"
   >
     <!-- Abstract Background - Liquid Gradients -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -86,20 +86,20 @@ function switchTab(tabId: string) {
 
     <!-- Main Glass Window Container -->
     <div
-      class="relative z-10 w-full h-full max-w-[1400px] bg-white/40 backdrop-blur-2xl border border-white/60 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] rounded-[2rem] flex flex-col md:flex-row overflow-hidden transition-all duration-500"
+      class="relative z-10 w-full h-full max-w-350 bg-white/40 backdrop-blur-2xl border border-white/60 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] rounded-4xl flex flex-col md:flex-row overflow-hidden transition-all duration-500"
     >
       <!-- --- Left Sidebar --- -->
       <div
-        class="w-full md:w-64 bg-white/30 border-b md:border-b-0 md:border-r border-white/50 flex flex-col backdrop-blur-md flex-shrink-0 z-30"
+        class="w-full md:w-64 bg-white/30 border-b md:border-b-0 md:border-r border-white/50 flex flex-col backdrop-blur-md shrink-0 z-30"
       >
         <!-- Top Header -->
         <div class="px-5 pt-6 pb-4 flex justify-between items-center md:block">
           <div>
             <h1
-              class="text-xl font-bold text-slate-800 tracking-tight flex items-center gap-2"
+              class="text-[1.3rem]! font-bold text-slate-800 tracking-tight flex items-center gap-2"
             >
               <div
-                class="w-9 h-9 rounded-full overflow-hidden border-2 border-white shadow-md flex-shrink-0"
+                class="w-9 h-9 rounded-full overflow-hidden border-2 border-white shadow-md shrink-0"
               >
                 <img
                   src="~/assets/images/Caleb.jpg"
@@ -143,8 +143,9 @@ function switchTab(tabId: string) {
               }}</span>
               <span
                 class="text-[10px] font-medium opacity-80 uppercase tracking-widest leading-tight mt-0.5"
-                >{{ item.sublabel }}</span
               >
+                {{ item.sublabel }}
+              </span>
             </div>
           </button>
         </div>
@@ -157,7 +158,7 @@ function switchTab(tabId: string) {
             rel="noreferrer"
             class="w-full flex items-center justify-center gap-2 px-4 py-3 bg-white/80 hover:bg-white text-slate-800 rounded-2xl text-sm font-bold transition-all shadow-sm border border-white/60 hover:shadow-md hover:-translate-y-0.5"
           >
-            <Icon icon="lucide:github" class="w-[18px] h-[18px]" />
+            <Icon icon="lucide:github" class="w-4.5 h-4.5" />
             GitHub
           </a>
         </div>
@@ -165,7 +166,7 @@ function switchTab(tabId: string) {
 
       <!-- Mobile Navigation Dock -->
       <div
-        class="md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 w-[92%] max-w-sm bg-white/90 backdrop-blur-2xl border border-white/60 rounded-[1.75rem] flex flex-row p-2 gap-2 z-[100] shadow-[0_20px_40px_rgba(0,0,0,0.15)] overflow-x-auto scrollbar-hide"
+        class="md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 w-[92%] max-w-sm bg-white/90 backdrop-blur-2xl border border-white/60 rounded-[1.75rem] flex flex-row p-2 gap-2 z-100 shadow-[0_20px_40px_rgba(0,0,0,0.15)] overflow-x-auto scrollbar-hide"
       >
         <button
           v-for="item in navItems"
