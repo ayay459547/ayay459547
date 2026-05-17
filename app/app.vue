@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-// import { Icon } from '@iconify/vue'
 
 const activeTab = ref('profile')
 
@@ -21,28 +20,24 @@ const navItems = [
     id: 'profile',
     label: '個人簡介',
     sublabel: 'Profile',
-    // icon: 'lucide:user'
     icon: 'fluent:person-board-28-regular'
   },
   {
     id: 'experience',
     label: '工作經驗',
     sublabel: 'Experience',
-    // icon: 'lucide:briefcase'
     icon: 'fluent:briefcase-12-regular'
   },
   {
     id: 'projects',
     label: '專案展示',
     sublabel: 'Projects',
-    // icon: 'lucide:layers'
     icon: 'fluent:layer-diagonal-sparkle-16-regular'
   },
   {
     id: 'skills-certs',
     label: '技能與證照',
     sublabel: 'Skills & Certs',
-    // icon: 'lucide:award'
     icon: 'lucide:award'
   }
 ]
@@ -109,21 +104,20 @@ function switchTab(tabId: string) {
               Chen Chan Hsieh
             </h1>
           </div>
-          <!-- Mobile GitHub Icon -->
+          <!-- Mobile -->
           <a
             href="https://github.com/ayay459547"
             target="_blank"
             rel="noreferrer"
             class="md:hidden flex items-center justify-center w-10 h-10 bg-white/80 hover:bg-white text-slate-800 rounded-xl transition-all shadow-sm border border-white/60"
           >
-            <!-- <Icon icon="lucide:github" class="w-5 h-5" /> -->
             <NuxtIcon name="grommet-icons:github" class="w-5 h-5" />
           </a>
         </div>
 
         <!-- Desktop Navigation -->
         <div
-          class="hidden md:flex flex-col flex-1 px-5 py-4 space-y-3 overflow-y-auto scrollbar-hide"
+          class="hidden md:flex flex-col gap-4 flex-1 px-5 py-4 overflow-y-auto scrollbar-hide"
         >
           <button
             v-for="item in navItems"
@@ -136,7 +130,6 @@ function switchTab(tabId: string) {
             ]"
             @click="switchTab(item.id)"
           >
-            <!-- <Icon :icon="item.icon" class="w-5 h-5" /> -->
             <NuxtIcon :name="item.icon" class="w-5 h-5" />
             <div class="flex flex-col items-start text-left text-current">
               <span class="text-[15px] font-bold tracking-wide leading-tight">{{
@@ -159,7 +152,6 @@ function switchTab(tabId: string) {
             rel="noreferrer"
             class="w-full flex items-center justify-center gap-2 px-4 py-3 bg-white/80 hover:bg-white text-slate-800 rounded-2xl text-sm font-bold transition-all shadow-sm border border-white/60 hover:shadow-md hover:-translate-y-0.5"
           >
-            <!-- <Icon icon="lucide:github" class="w-4.5 h-4.5" /> -->
             <NuxtIcon name="grommet-icons:github" class="w-4.5 h-4.5" />
             GitHub
           </a>
@@ -181,7 +173,6 @@ function switchTab(tabId: string) {
           ]"
           @click="switchTab(item.id)"
         >
-          <!-- <Icon :icon="item.icon" class="w-5 h-5" /> -->
           <NuxtIcon :name="item.icon" class="w-5 h-5" />
           <div class="flex flex-col items-center text-current text-center">
             <span

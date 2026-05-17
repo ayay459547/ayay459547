@@ -1,6 +1,4 @@
-<script setup lang="ts">
-// import { Icon } from '@iconify/vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="max-w-3xl mx-auto flex flex-col items-center justify-center min-h-full animate-fade-in py-8">

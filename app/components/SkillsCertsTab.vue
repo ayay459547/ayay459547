@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// import { Icon } from '@iconify/vue'
 
 const skills = [
   { name: 'HTML5', color: 'E34F26', logo: 'html5', logoColor: 'white' },
@@ -21,42 +20,42 @@ const certs = [
   {
     title: '財產保險業務員資格',
     issuer: '財團法人台灣金融研訓院',
-    date: '2019年8月 · 永久有效',
+    date: '2019年8月',
     icon: 'lucide:shield-check',
     color: 'emerald'
   },
   {
-    title: '金融 market 常識與職業道德',
+    title: '金融常識與職業道德',
     issuer: '財團法人台灣金融研訓院',
-    date: '2019年6月 · 永久有效',
+    date: '2019年6月',
     icon: 'lucide:landmark',
     color: 'amber'
   },
   {
     title: 'TQC+ 程式語言 Python3',
     issuer: '財團法人中華民國電腦技能基金會',
-    date: '2019年4月 · 永久有效',
+    date: '2019年4月',
     icon: 'lucide:terminal',
     color: 'blue'
   },
   {
     title: 'TQC-OA-行動裝置應用',
     issuer: '財團法人中華民國電腦技能基金會',
-    date: '2019年2月 · 永久有效',
+    date: '2019年2月',
     icon: 'lucide:smartphone',
     color: 'indigo'
   },
   {
     title: '信託業業務人員信託業務專業測驗',
     issuer: '財團法人台灣金融研訓院',
-    date: '2018年10月 · 永久有效',
+    date: '2018年10月',
     icon: 'lucide:hand-coins',
     color: 'teal'
   },
   {
     title: '證券商業務員',
     issuer: '證券暨期貨市場發展基金會',
-    date: '2018年8月 · 永久有效',
+    date: '2018年8月',
     icon: 'lucide:trending-up',
     color: 'cyan'
   }
@@ -120,7 +119,7 @@ const colorClasses: Record<string, string> = {
           <div>
             <h4 class="text-base font-bold text-slate-800 leading-tight mb-1.5">{{ cert.title }}</h4>
             <p class="text-xs text-slate-500 font-medium mb-1">{{ cert.issuer }}</p>
-            <p class="text-xs text-slate-400">發照日期 {{ cert.date }}</p>
+            <p class="text-xs text-slate-400">發照日期：{{ cert.date }}</p>
           </div>
         </div>
       </div>

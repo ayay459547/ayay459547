@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// import { Icon } from '@iconify/vue'
-
 const experiences = [
   {
     key: '1',
