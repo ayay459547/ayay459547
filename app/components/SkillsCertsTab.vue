@@ -1,19 +1,26 @@
 <script setup lang="ts">
 
 const skills = [
-  { name: 'HTML5', color: 'E34F26', logo: 'html5', logoColor: 'white' },
-  { name: 'CSS3', color: '1572B6', logo: 'css3', logoColor: 'white' },
-  { name: 'SCSS', color: 'CC6699', logo: 'sass', logoColor: 'white' },
-  { name: 'JavaScript', color: 'F7DF1E', logo: 'javascript', logoColor: 'black' },
-  { name: 'TypeScript', color: '3178C6', logo: 'typescript', logoColor: 'white' },
-  { name: 'React', color: '61DAFB', logo: 'react', logoColor: 'black' },
-  { name: 'Vue.js', color: '4FC08D', logo: 'vue.js', logoColor: 'white' },
-  { name: 'Vite', color: '646CFF', logo: 'vite', logoColor: 'white' },
-  { name: 'Nuxt.js', color: '00C58E', logo: 'nuxt.js', logoColor: 'white' },
-  { name: 'Git', color: 'F05032', logo: 'git', logoColor: 'white' },
-  { name: 'SVN', color: '809CC9', logo: 'subversion', logoColor: 'white' },
-  { name: 'SQL', color: '4479A1', logo: 'sqlite', logoColor: 'white' },
-  { name: 'VSCode', color: '007ACC', logo: 'visual-studio-code', logoColor: 'white' }
+  // 核心前端
+  { name: 'HTML5', color: 'DE4B23', logo: 'html5', logoColor: 'white' },        // 微調為質感磚紅
+  { name: 'CSS3', color: '2173F3', logo: 'css3', logoColor: 'white' },          // 現代科技亮藍
+  { name: 'SCSS', color: 'CF649A', logo: 'sass', logoColor: 'white' },          // 柔和乾燥玫瑰粉
+  { name: 'JavaScript', color: 'F0DB4F', logo: 'javascript', logoColor: '323330' }, // 降低刺眼感，更像官方調色
+  { name: 'TypeScript', color: '3178C6', logo: 'typescript', logoColor: 'white' }, // 保持經典微調極客藍
+
+  // 框架與工具
+  { name: 'React', color: '00D8FF', logo: 'react', logoColor: '1C2022' },       // 飽和度更高的霓虹青（字改深色才清晰）
+  { name: 'Vue.js', color: '42B883', logo: 'vue.js', logoColor: 'white' },      // 官方現代翡翠綠
+  { name: 'Vite', color: 'BD34FE', logo: 'vite', logoColor: 'white' },          // 現代感極強的幻彩紫
+  { name: 'Nuxt.js', color: '00DC82', logo: 'nuxt.js', logoColor: 'white' },    // Nuxt 3/4 官方最新螢光綠
+
+  // 版控與資料庫
+  { name: 'Git', color: 'F05032', logo: 'git', logoColor: 'white' },            // 經典亮橘紅
+  { name: 'SVN', color: '5D7CA6', logo: 'subversion', logoColor: 'white' },     // 將古董藍調為洗鍊的莫蘭迪藍灰色
+  { name: 'SQL', color: '336791', logo: 'sqlite', logoColor: 'white' },         // 深邃洗鍊的商務藍
+
+  // 開發工具
+  { name: 'VSCode', color: '23A7F2', logo: 'visual-studio-code', logoColor: 'white' } // 現代微軟流暢設計的亮藍
 ]
 
 const certs = [
@@ -21,42 +28,42 @@ const certs = [
     title: '財產保險業務員資格',
     issuer: '財團法人台灣金融研訓院',
     date: '2019年8月',
-    icon: 'lucide:shield-check',
+    icon: 'ic:outline-collections-bookmark',
     color: 'emerald'
   },
   {
     title: '金融常識與職業道德',
     issuer: '財團法人台灣金融研訓院',
     date: '2019年6月',
-    icon: 'lucide:landmark',
+    icon: 'ic:baseline-monetization-on',
     color: 'amber'
   },
   {
     title: 'TQC+ 程式語言 Python3',
     issuer: '財團法人中華民國電腦技能基金會',
     date: '2019年4月',
-    icon: 'lucide:terminal',
+    icon: 'ic:outline-terminal',
     color: 'blue'
   },
   {
     title: 'TQC-OA-行動裝置應用',
     issuer: '財團法人中華民國電腦技能基金會',
     date: '2019年2月',
-    icon: 'lucide:smartphone',
+    icon: 'ic:baseline-phone-android',
     color: 'indigo'
   },
   {
     title: '信託業業務人員信託業務專業測驗',
     issuer: '財團法人台灣金融研訓院',
     date: '2018年10月',
-    icon: 'lucide:hand-coins',
+    icon: 'ic:baseline-clean-hands',
     color: 'teal'
   },
   {
     title: '證券商業務員',
     issuer: '證券暨期貨市場發展基金會',
     date: '2018年8月',
-    icon: 'lucide:trending-up',
+    icon: 'ic:twotone-candlestick-chart',
     color: 'cyan'
   }
 ]
@@ -77,7 +84,7 @@ const colorClasses: Record<string, string> = {
     <div>
       <div class="flex items-center gap-3 mb-6">
         <div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 shadow-inner shrink-0">
-          <NuxtIcon name="lucide:sliders-horizontal" class="w-5 h-5" />
+          <NuxtIcon name="fluent-mdl2:file-code" class="w-5 h-5" />
         </div>
         <div>
           <h3 class="text-xl font-bold text-slate-800">技能與工具</h3>

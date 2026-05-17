@@ -5,7 +5,7 @@ const experiences = [
     title: '物流業 ERP 系統',
     role: '前端工程師',
     description: '參與物流追蹤與倉儲管理系統開發，負責將龐雜的數據轉化為使用者友善的操作介面，提升內部作業效率與精準度。',
-    icon: 'lucide:box',
+    icon: 'fluent:box-16-regular',
     color: 'blue'
   },
   {
@@ -13,7 +13,7 @@ const experiences = [
     title: '製造業 APS 系統',
     role: '前端工程師',
     description: '深入理解製造業生產排程與資源規劃邏輯，負責先進排程系統(APS)之前端介面開發與架構優化，導入現代化技術棧。',
-    icon: 'lucide:settings-2',
+    icon: 'fluent-mdl2:production-floor-management',
     color: 'emerald'
   },
   {
@@ -21,7 +21,7 @@ const experiences = [
     title: '金融人壽業 行動保全 + 繳費平台',
     role: '前端工程師',
     description: '處理高敏感數據與複雜表單狀態，確保金融與保險申報流程的安全、穩定與合規性，打造高信賴感的使用體驗。',
-    icon: 'lucide:briefcase',
+    icon: 'fluent-mdl2:waitlist-confirm-mirrored',
     color: 'purple'
   },
   {
@@ -29,7 +29,7 @@ const experiences = [
     title: '金融產險業',
     role: '行政助理',
     description: '協助產險相關業務之行政作業處理、資料建檔與文件維護，確保跨部門溝通順暢並維持內部流程的高效運作。',
-    icon: 'lucide:file-text',
+    icon: 'fluent-mdl2:document-set',
     color: 'slate'
   }
 ]
