@@ -28,42 +28,42 @@ const certs = [
     title: '財產保險業務員資格',
     issuer: '財團法人台灣金融研訓院',
     date: '2019年8月',
-    icon: 'ic:outline-collections-bookmark',
+    icon: 'fluent:document-ribbon-16-regular',
     color: 'emerald'
   },
   {
     title: '金融常識與職業道德',
     issuer: '財團法人台灣金融研訓院',
     date: '2019年6月',
-    icon: 'ic:baseline-monetization-on',
+    icon: 'fluent:currency-dollar-euro-16-filled',
     color: 'amber'
   },
   {
     title: 'TQC+ 程式語言 Python3',
     issuer: '財團法人中華民國電腦技能基金會',
     date: '2019年4月',
-    icon: 'ic:outline-terminal',
+    icon: 'fluent:braces-16-filled',
     color: 'blue'
   },
   {
     title: 'TQC-OA-行動裝置應用',
     issuer: '財團法人中華民國電腦技能基金會',
     date: '2019年2月',
-    icon: 'ic:baseline-phone-android',
+    icon: 'fluent:phone-checkmark-16-regular',
     color: 'indigo'
   },
   {
     title: '信託業業務人員信託業務專業測驗',
     issuer: '財團法人台灣金融研訓院',
     date: '2018年10月',
-    icon: 'ic:baseline-clean-hands',
+    icon: 'fluent:handshake-16-regular',
     color: 'teal'
   },
   {
     title: '證券商業務員',
     issuer: '證券暨期貨市場發展基金會',
     date: '2018年8月',
-    icon: 'ic:twotone-candlestick-chart',
+    icon: 'fluent:chart-person-20-regular',
     color: 'cyan'
   }
 ]
@@ -84,7 +84,7 @@ const colorClasses: Record<string, string> = {
     <div>
       <div class="flex items-center gap-3 mb-6">
         <div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 shadow-inner shrink-0">
-          <NuxtIcon name="fluent-mdl2:file-code" class="w-5 h-5" />
+          <NuxtIcon name="fluent:box-toolbox-20-regular" class="w-5 h-5" />
         </div>
         <div>
           <h3 class="text-xl font-bold text-slate-800">技能與工具</h3>
