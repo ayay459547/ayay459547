@@ -1,5 +1,4 @@
-const COMPATIBILITY_DATE = '2026-05-16'
-const NUXT_BUILD_VERSION = '2026-05-16.1'
+const COMPATIBILITY_DATE = '2026-05-17'
 
 const NUXT_APP_VERSION = process.env.NUXT_APP_VERSION || '0.0.0'
 const NUXT_APP_BASE_URL = process.env.NUXT_APP_BASE_URL || '/'
@@ -22,16 +21,16 @@ console.log(
 )
 console.log(
   '\x1B[33m%s\x1B[0m \x1B[36m%s\x1B[0m',
-  '前端服務器資訊',
-  `(執行時間: ${formattedDate})`
+  'Server Info',
+  `(Run Time: ${formattedDate})`
 )
 console.table({
-  系統版本: NUXT_APP_VERSION,
-  Base_Url: NUXT_APP_BASE_URL,
-  Public_Url: NUXT_APP_URL,
-  打包版本: NUXT_BUILD_VERSION
+  VERSION: NUXT_APP_VERSION,
+  BaseUrl: NUXT_APP_BASE_URL,
+  PublicUrl: NUXT_APP_URL,
+  CompatibilityDate: COMPATIBILITY_DATE
 })
-console.log('\x1B[43m%s\x1B[0m', ' 注意打包版本是否有更新 ')
+console.log('\x1B[43m%s\x1B[0m', ' Check Version!')
 console.log(
   '\n ------------------------------------------------------------------------ \n'
 )
@@ -92,8 +91,7 @@ export default defineNuxtConfig({
     public: {
       version: NUXT_APP_VERSION,
       baseURL: NUXT_APP_BASE_URL,
-      publicURL: NUXT_APP_URL,
-      buildVersion: NUXT_BUILD_VERSION
+      publicURL: NUXT_APP_URL
     }
   },
 
