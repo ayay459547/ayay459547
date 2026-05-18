@@ -44,7 +44,11 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/google-fonts', '@nuxt/eslint', '@nuxt/ui', '@nuxt/icon'],
 
   icon: {
-    componentName: 'NuxtIcon'
+    componentName: 'NuxtIcon',
+    clientBundle: {
+      scan: true,
+      sizeLimitKb: 256
+    }
   },
 
   // Google Fonts
